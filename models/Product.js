@@ -60,6 +60,14 @@ Products.init({
         profit: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
+        },
+        category_id: {
+            type: DataTypes.INTEGER,
+            References: {
+                model: 'category',
+                key: 'id'
+            }
+
         }
 
 
