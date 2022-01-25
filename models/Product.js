@@ -70,7 +70,6 @@ Products.init({
         underscored: true,
         modelName: 'product',
 
-
     }
     // sequelize hooks
 
