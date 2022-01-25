@@ -1,0 +1,21 @@
+{
+  "name": "project_2_group_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikekhoury135/Project_2_Group_5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikekhoury135/Project_2_Group_5/issues"
+  },
+  "homepage": "https://github.com/mikekhoury135/Project_2_Group_5#readme"
+}
