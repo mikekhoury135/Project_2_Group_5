@@ -1,0 +1,29 @@
+{
+  "name": "project_2_group_5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikekhoury135/Project_2_Group_5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikekhoury135/Project_2_Group_5/issues"
+  },
+  "homepage": "https://github.com/mikekhoury135/Project_2_Group_5#readme",
+  "dependencies": {
+    "dotenv": "^14.3.1",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "router": "^1.3.6",
+    "sequelize": "^6.14.1",
+    "sequelizer": "^1.1.4"
+  }
+}
