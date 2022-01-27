@@ -3,34 +3,35 @@ const sequelize = require('../config/connection');
 
 
 User.init({
-    // define an id column
+    // id column
+
     id: {
-        // use the special Sequelize DataTypes object provide what type of data it is
+        // Creating Datatype Integer
         type: DataTypes.INTEGER,
-        // this is the equivalent of SQL's `NOT NULL` option
+        // Allow null if true is mandatory column
         allowNull: false,
-        // instruct that this is the Primary Key
+        // Primary key
         primaryKey: true,
-        // turn on auto increment
+        // will increment by one everytime a row is created
         autoIncrement: true
     },
-    // define a username column
+    // username column
     username: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    // define an email column
+    // email column
     email: {
         type: DataTypes.STRING,
         allowNull: false,
-        // there cannot be any duplicate email values in this table
+        // unique no duplicates
         unique: true,
-        // if allowNull is set to false, we can run our data through validators before creating the table data
+        // validates only email will be accepted
         validate: {
             isEmail: true
         }
     },
-    // define a password column
+    // password column
     password: {
         type: DataTypes.STRING,
         allowNull: false,
