@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Make } = require('../../models');
+const { Color } = require('../../models');
 
 
 // GET /api/makes
 router.get('/', (req, res) => {
      // Access our User model and run .findAll() method)
-     Make.findAll()
-  .then(dbMakeData => res.json(dbMakeData))
+Color.findAll()
+  .then(dbColorData => res.json(dbColorData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -16,17 +16,17 @@ router.get('/', (req, res) => {
 
 // GET /api/makes/1
 router.get('/:id', (req, res) => {
-    Make.findOne({
+    Color.findOne({
       where: {
         id: req.params.id
       }
     })
-      .then(dbMakeData => {
-        if (!dbMakeData) {
-          res.status(404).json({ message: 'No manufacturer found with this id' });
+      .then(dbColorData => {
+        if (!dbColorData) {
+          res.status(404).json({ message: 'No color found with this id' });
           return;
         }
-        res.json(dbMakeData);
+        res.json(dbColorData);
       })
       .catch(err => {
         console.log(err);
@@ -37,13 +37,10 @@ router.get('/:id', (req, res) => {
 // POST /api/make-1
 router.post('/', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
-      Make.create({
-      manufacture_name: req.body.manufacture_name,
-      model_id: req.body.model_id,
-      price: req.body.price,
-      stock: req.body.stock
+      Color.create({
+      color_name: req.body.color_name
     })
-      .then(dbMakeData => res.json(dbMakeData))
+      .then(dbColorData => res.json(dbColorData))
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
@@ -54,17 +51,17 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
   
-    Make.update(req.body, {
+    Color.update(req.body, {
       where: {
         id: req.params.id
       }
     })
-      .then(dbMakeData => {
-        if (!dbMakeData[0]) {
-          res.status(404).json({ message: 'No manufacture found with this id' });
+      .then(dbColorData => {
+        if (!dbColorData[0]) {
+          res.status(404).json({ message: 'No color found with this id' });
           return;
         }
-        res.json(dbMakeData);
+        res.json(dbColorData);
       })
       .catch(err => {
         console.log(err);
@@ -75,17 +72,17 @@ router.put('/:id', (req, res) => {
 // DELETE /api/makes/1
 // DELETE /api/makes/1
 router.delete('/:id', (req, res) => {
-    Make.destroy({
+    Color.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(dbMakeData => {
-        if (!dbMakeData) {
-          res.status(404).json({ message: 'No  manufacture found with this id' });
+      .then(dbColorData => {
+        if (!dbColorData) {
+          res.status(404).json({ message: 'No  color found with this id' });
           return;
         }
-        res.json(dbMakeData);
+        res.json(dbColorData);
       })
       .catch(err => {
         console.log(err);
