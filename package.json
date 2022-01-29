@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mikekhoury135/Project_2_Group_5#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "dotenv": "^14.3.1",
     "express": "^4.17.2",
     "mysql2": "^2.3.3",
