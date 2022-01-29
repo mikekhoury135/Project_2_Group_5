@@ -75,6 +75,6 @@ const makeData = [
   },
 ];
 
-const seedProducts = () => Make.bulkCreate(makeData);
+const seedMakes = () => Make.bulkCreate(makeData);
 
-module.exports = seedProducts;
+module.exports = seedMakes;

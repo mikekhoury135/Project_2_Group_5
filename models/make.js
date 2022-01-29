@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-// a product model
+// a make model
 class Make extends Model {}
 
 
@@ -48,9 +48,7 @@ Make.init(
       },
    
     {
-      // TABLE CONFIGURATION OPTIONS GO HERE (https://sequelize.org/v5/manual/models-definition.html#configuration))
-  
-      //sequelize connection (the direct connection to our database)
+     
       sequelize,
       timestamps: false,
       freezeTableName: true,
