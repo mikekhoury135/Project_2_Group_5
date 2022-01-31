@@ -17,14 +17,14 @@ Make.init(
         autoIncrement: true
       },
       // define product_name column
-      manufacture_name: {
+      make_name: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      model_id: {
+        year_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'model',
+          model: 'year',
           key: 'id',
           unique: false
         }
@@ -58,3 +58,5 @@ Make.init(
   );
   
   module.exports = Make;
+
+  // ALTER TABLE [make] NOCHECK CONSTRAINT [FK_make_id]

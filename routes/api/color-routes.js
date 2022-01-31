@@ -1,12 +1,22 @@
 const router = require('express').Router();
-const { Color } = require('../../models');
+const { Color, Make } = require('../../models');
 
 
 // GET /api/makes
 router.get('/', (req, res) => {
      // Access our User model and run .findAll() method)
-Color.findAll()
-  .then(dbColorData => res.json(dbColorData))
+Color.findAll(
+  {
+    include:
+    [
+      {
+        model: Make,
+      }
+    ]
+  }
+)
+  .then(dbColorData => 
+    res.json(dbColorData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -19,7 +29,13 @@ router.get('/:id', (req, res) => {
     Color.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include:
+      [
+        {
+          model: Make
+        }
+      ]
     })
       .then(dbColorData => {
         if (!dbColorData) {
@@ -37,9 +53,7 @@ router.get('/:id', (req, res) => {
 // POST /api/make-1
 router.post('/', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
-      Color.create({
-      color_name: req.body.color_name
-    })
+      Color.create(req.body)
       .then(dbColorData => res.json(dbColorData))
       .catch(err => {
         console.log(err);
@@ -69,7 +83,7 @@ router.put('/:id', (req, res) => {
       });
   });
 
-// DELETE /api/makes/1
+
 // DELETE /api/makes/1
 router.delete('/:id', (req, res) => {
     Color.destroy({

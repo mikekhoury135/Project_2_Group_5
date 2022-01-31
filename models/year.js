@@ -13,7 +13,7 @@ Year.init(
       primaryKey: true,
       autoIncrement: true
       },
-      manufacturing_year: {
+      make_year: {
       type: DataTypes.INTEGER,
       allowNull: false
       }
