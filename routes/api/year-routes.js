@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
     Year.create({
-    manufacturing_year: req.body.manufacturing_year
+    make_year: req.body.make_year
   })
     .then(dbYearData => res.json(dbYearData))
     .catch(err => {

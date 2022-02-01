@@ -47,7 +47,7 @@ const makeData = [
   },
   {
     make_name: 'LEXUS',
-    color_id: 11,
+    color_id: 2,
     price: 49000.00,
     stock: 14,
     
@@ -68,7 +68,7 @@ const makeData = [
   },
   {
     make_name: 'ACURA',
-    collor_id: 10,
+    color_id: 10,
     price: 74000.00,
     stock: 5,
     

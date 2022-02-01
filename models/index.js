@@ -12,6 +12,12 @@ const MakeYear = require('./MakeYear');
     // onDelete: 'CASCADE'
   });
   
+  Make.belongsTo(Year,{
+    foreignKey: 'year_id'
+  });
+  
+
+
   // Tags belongToMany Products
   Year.belongsToMany(Make,{
     through: MakeYear,

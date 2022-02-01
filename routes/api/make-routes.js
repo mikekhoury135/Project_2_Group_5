@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
         include:
         [
           {
-            model: Color,
+            model: Year,
           },
           {
             model: Year,
@@ -46,7 +46,7 @@ router.get('/:id', (req, res) => {
     })
       .then(dbMakeData => {
         if (!dbMakeData) {
-          res.status(404).json({ message: 'No manufacturer found with this id' });
+          res.status(404).json({ message: 'No make found with this id' });
           return;
         }
         res.json(dbMakeData);
@@ -133,7 +133,7 @@ router.delete('/:id', (req, res) => {
     })
       .then(dbMakeData => {
         if (!dbMakeData) {
-          res.status(404).json({ message: 'No  manufacture found with this id' });
+          res.status(404).json({ message: 'No  make found with this id' });
           return;
         }
         res.json(dbMakeData);

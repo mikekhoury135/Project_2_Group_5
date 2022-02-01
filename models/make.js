@@ -21,7 +21,7 @@ Make.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-        year_id: {
+      year_id: {
         type: DataTypes.INTEGER,
         references: {
           model: 'year',
