@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { UPSERT } = require('sequelize/dist/lib/query-types');
 const apiRoutes = require('./api');
 const { Users } = require('./users');
+const { Make } = require('../models');
+
 router.use('/api', apiRoutes);
 
 router.use((req, res) => {
@@ -63,6 +65,15 @@ app.post('/signup/:username&:email&:password', (req, res) => {
 
 })
 
-app.listen(process.env || PORT, () => { "server started on port" + PORT });
+
+app.get('/', (req, res) => {
+    const manufacturerName = {};
+    const manufacturerName = Make.findAll({
+        attributes: [manufacturer]
+    });
+    console.log(manufacturerName)
+})
+
+
 
 module.exports = router;
