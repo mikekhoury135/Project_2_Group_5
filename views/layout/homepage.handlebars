@@ -1,37 +1,11 @@
-<h1>Car Inventory DB</h1>
-
-{{!-- <ol id="buttonsHolder" class="buttons-holder">
-  {{#each buttons as |button|}}
-  <li>
-    {{> buttons }}
-  </li>
-  {{/each}} --}}
-
-
-<input type="text"><select>{{>optionsHTML}}</select>
-
-
-
-
-</ol>
-
-
-<ol class="post-list">
-  <li>
-  
-
-
-    {{!-- <article class="post">
-      <div class="title">
-        <a href="{{post}}" target="_blank">{{title}}</a>
-        <span>({{post_url}})</span>
-      </div>
-      <div class="meta">
-        {{vote_count}} point(s) by {{user.username}} on
-        {{created_at}}
-        |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-      </div>
-    </article> --}}
-  </li>
-</ol>
+<section class="container">
+  <!-- If the user is logged in, render the gallery content -->
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+<h1>SIGNED UP</h1>  
+  </section>
+</section>
+<!-- Otherwise, provide a link to login -->
+{{else}}
+<a href="/login">You must login first to view the paintings</a>
+{{/if}}

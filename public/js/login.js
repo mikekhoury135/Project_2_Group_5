@@ -12,9 +12,15 @@ const loginFormHandler = async(event) => {
         });
 
         if (response.ok) {
+            alert("logged in");
             document.location.replace('/');
         } else {
             alert('Failed to log in.');
         }
     }
 };
+
+
+document
+    .querySelector('.login-form')
+    .addEventListener('submit', loginFormHandler);
