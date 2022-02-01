@@ -3,8 +3,6 @@ const Color = require('./Color');
 const Year = require('./Year');
 const MakeYear = require('./MakeYear');
 
-
-
   // make belongToMany year
   Make.belongsToMany(Year,{
     through: MakeYear,
