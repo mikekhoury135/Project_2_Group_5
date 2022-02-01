@@ -1,7 +1,7 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 
-const makeRoutes = require('./make-routes.js');
+// const makeRoutes = require('./make-routes.js');
 
-router.use('/makes', makeRoutes);
+// router.use('/makes', makeRoutes);
 
-module.exports = router;
+// module.exports = router;

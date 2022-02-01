@@ -7,54 +7,41 @@ class Make extends Model {}
 
 
 // define table columns and configuration
-Make.init(
-    {
-      // TABLE COLUMN DEFINITIONS GO HERE
-      id: {
+Make.init({
+    // TABLE COLUMN DEFINITIONS GO HERE
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
-      },
-      // define product_name column
-      manufacture_name: {
+    },
+    // define product_name column
+    manufacture_name: {
         type: DataTypes.STRING,
         allowNull: false
-      },
-      model_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'model',
-          key: 'id',
-          unique: false
-        }
-      
     },
-      // define price column
-      price: {
+    // define price column
+    price: {
         type: DataTypes.DECIMAL,
         allowNull: false,
         validate: {
-          isDecimal: true
+            isDecimal: true
         }
-      },
-       // define stock column
-      stock: {
+    },
+    // define stock column
+    stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 10,
-       
-      }
-      },
-   
-    {
-     
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'make',
+
     }
-  );
-  
-  module.exports = Make;
+}, {
+
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'make',
+});
+
+module.exports = Make;

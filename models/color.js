@@ -1,11 +1,11 @@
-const {Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection');
 
 
 
 class Color extends Model {}
-    
+
 Color.init({
     id: {
         type: DataTypes.INTEGER,
@@ -16,13 +16,14 @@ Color.init({
     color_name: {
         type: DataTypes.STRING,
         allowNull: false
-    },  
+    }
 }, {
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'color'
+    modelName: 'Color'
 })
 
 
