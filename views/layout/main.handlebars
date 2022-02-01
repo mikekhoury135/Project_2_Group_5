@@ -4,25 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Just Tech News</title>
+  <title>Project 2 Group 5</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
   <div class="wrapper">
+    {{#if loggedIn}}
     <header>
-      <h1>
-        <a href="/">Just Tech News</a>
-      </h1>
+      <nav>
+        <a href="/" class="column">Home</a>
+        <a href="/dashboard" class="column">Dashboard</a>
+        <a id="logout" class="column">Logout</a>
+      </nav>
+      <div id="title-block_loggedin" class="section">
+        <h1>Project 2 Group 5</h1>
+      </div>
     </header>
-    <main>
-      {{{ body }}}
+    {{else}}
+    <header>
+      <nav>
+        <a href="/login" class="column">Login</a>
+      </nav>
+      <div id="title-block" class="section">
+        <h1>Project 2 Group 5</h1>
+      </div>
+    </header>
+    {{/if}}
+    <main class="section">
+      <div class="column is-8 is-offset-2">{{{ body }}}</div>
     </main>
-    <footer>
-      Thanks for visiting!
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong>Project 2</strong> by <a href="https://github.com/mikekhoury135/Project_2_Group_5">Group 5</a></p>
+      </div>
     </footer>
   </div>
-
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
