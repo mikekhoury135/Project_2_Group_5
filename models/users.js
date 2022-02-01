@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 
-class User extends Model {}
+class User extends Model {};
 
 User.init({
     // id column
@@ -48,9 +48,7 @@ User.init({
             newuserData.password = bcrypt.hash(userData.password, 10);
             return newuserData;
         }
-
-    }
-}, {
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,

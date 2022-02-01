@@ -1,13 +1,13 @@
 const router = require('express').Router();
 
-const { User } = require('../../models/');
+const { Users } = require('../../models/');
 
 
 router.post('/signup/:username/:password', async(req, res) => {
 
     console.log('Entered');
     try {
-        const dbUserData = await User.create({
+        const dbUserData = await Users.create({
 
 
             user_name: req.params.username,

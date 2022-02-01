@@ -1,9 +1,9 @@
-const Make = require('./Make');
-const Color = require('./Color');
-const Year = require('./Year');
-const User = require('./users');
+// const Make = require('./Make');
+// const Color = require('./Color');
+// const Year = require('./Year');
+const Users = require('./Users');
 
 
 
 
-module.exports = { Make, Color, Year, User };
+module.exports = { Users };
