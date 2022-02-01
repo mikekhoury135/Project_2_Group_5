@@ -5,7 +5,6 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./routes');
-const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -27,9 +26,9 @@ const sess = {
 // app.use(session(sess));
 
 
-const helpers = require('./utils/helpers');
+// const helpers = require('./utils/helpers');
 
-const hbs = exphbs.create({ helpers });
+// const hbs = exphbs.create({ helpers });
 
 // app.engine('handlebars', hbs.engine);
 // app.set('view engine', 'handlebars');
@@ -53,8 +52,6 @@ sequelize.sync({ force: false }).then(() => {
 //   });
 
 // variables for log in handbars
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', hbs.engine);
+// app.set('view engine', 'handlebars');

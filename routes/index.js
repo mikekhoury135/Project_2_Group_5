@@ -1,14 +1,15 @@
+const express = require('express');
 const router = require('express').Router();
-const { UPSERT } = require('sequelize/dist/lib/query-types');
+const { UPSERT } = require('sequelize/dist/lib/query-types.js');
 const apiRoutes = require('./api');
-const { Users } = require('./users');
+// const { Users } = require('./users');
 router.use('/api', apiRoutes);
 
 router.use((req, res) => {
     res.send("<h1>Wrong Route!</h1>")
 });
 
-
+const app = express();
 
 // login model need bcrypt implementation
 
