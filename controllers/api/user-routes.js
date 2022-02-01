@@ -3,16 +3,16 @@ const router = require('express').Router();
 const { Users } = require('../../models/');
 
 
-router.post('/signup/:username/:email/:password', async(req, res) => {
+router.post('/signup/', async(req, res) => {
 
     console.log('Entered');
 
     const dbUserData = await Users.create({
 
 
-        username: req.params.username,
-        email: req.params.email,
-        password: req.params.password
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
 
 
     }).then((data) => {
