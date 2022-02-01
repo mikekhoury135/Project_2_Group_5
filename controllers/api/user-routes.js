@@ -1,9 +1,9 @@
 const router = require('express').Router();
 
+const { User } = require('../../models/');
 
 
-
-router.post('/signup:username&:email&:password', async(req, res) => {
+router.post('/signup/:username/:password', async(req, res) => {
 
     console.log('Entered');
     try {
@@ -11,7 +11,6 @@ router.post('/signup:username&:email&:password', async(req, res) => {
 
 
             user_name: req.params.username,
-            email: req.params.email,
             password: req.params.password
 
 
