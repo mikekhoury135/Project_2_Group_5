@@ -11,34 +11,28 @@ router.post('/signup', async(req, res) => {
 
     console.log('Entered');
 
-    const sentDataHolder = req.body;
-
-    const username = sentDataHolder.username;
-
-    const email = sentDataHolder.email;
-
-    const password = sentDataHolder.password;
 
     const dbUserData = await User.create({
 
 
-        username: username,
-        email: email,
-        password: password
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
 
 
     }).then((data) => {
         console.log(data);
         res.json(data);
 
-        console.log("added")
-        req.session.save(() => {
-            req.session.loggedIn = true;
+        console.log("added");
+        res.status(200);
+        // req.session.save(() => {
+        //     req.session.loggedIn = true;
 
-            res.status(200)
-            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        //     res.status(200)
+        //     res.json({ user: dbUserData, message: 'You are now logged in!' });
 
-        })
+        // })
 
     }).catch((err) => {
         console.log(err);
@@ -49,16 +43,10 @@ router.post('/signup', async(req, res) => {
 // Login
 router.post('/login', async(req, res) => {
 
-    const sentDataHolder = req.body;
-
-    const email = sentDataHolder.email;
-
-    const password = sentDataHolder.password;
-
     try {
         const dbUserData = await User.findOne({
             where: {
-                email: email,
+                username: req.body.username,
             },
         })
         if (!dbUserData) {
@@ -68,7 +56,7 @@ router.post('/login', async(req, res) => {
             return;
         }
 
-        const validPassword = await dbUserData.checkPassword(password);
+        const validPassword = await dbUserData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res
