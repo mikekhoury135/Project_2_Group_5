@@ -62,11 +62,17 @@ body, html {
 
 /* Search Page (car-search.handlebars) */
 
-#filter-btn {
+#category-name {
+  color: white;
+  font-weight: 900;
+  text-align: center;
+}
+
+#filter-btn, #add-new-btn {
   padding-left: 40px;
 }
 
-#filter-btn > span {
+#filter-btn > span, #add-new-btn > span {
   margin-left: 5px;
 }
 
@@ -76,6 +82,6 @@ body, html {
   background-color: rgba(0, 0, 0, 0.65);
 }
 
-#filter-search-btn {
+#filter-search-btn, #add-new-submit {
   margin-top: 10px;
 }

@@ -1,5 +1,9 @@
 <!-- Search -->
 <section id="search">
+
+  <!-- Category Name -->
+  <h1 id="category-name" class="title is-1">Cars</h1>
+
   <div class="field is-horizontal">
     <div class="field-body">
 
@@ -21,10 +25,10 @@
         </div>
       </div>
 
-      <!-- filter button activates modal -->
+      <!-- filter button activates filter modal -->
       <div class="field is-narrow">
         <div class="control has-icons-left is-narrow">
-          <button id="filter-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-js-example">
+          <button id="filter-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-filter">
             <span class="icon is-small is-left">
               <i class="fas fa-filter"></i>
             </span>
@@ -32,30 +36,43 @@
           </button>
         </div>
       </div>
+
+      <!-- add-new button activates add-new modal -->
+      <div class="field is-narrow">
+        <div class="control has-icons-left is-narrow">
+          <button id="add-new-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-add-new">
+            <span class="icon is-small is-left">
+              <i class="fas fa-plus"></i>
+            </span>
+            Add New
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Modal Code START -->
-  <div id="modal-js-example" class="modal">
+  <!-- Filter Modal Code START -->
+  <div id="modal-filter" class="modal">
     <!-- dims rest of screen when modal active -->
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="box">
 
-        <!-- filter search field -->
-        <div class="field is-expanded">
-          <div id="search-bar" class="field">
-            <div class="control is-expanded has-icons-left">
-              <input id="search-field" class="input is-rounded" type="search" placeholder="Search">
-              <span class="icon is-small is-left">
-                <i class="fas fa-search"></i>
-              </span>
+        <h4 class="title is-4">Filter Cars</h4>
+        <!-- filter options form -->
+        <form id="filter-options">
+          <!-- filter search field -->
+          <div class="field is-expanded">
+            <div id="search-bar" class="field">
+              <div class="control is-expanded has-icons-left">
+                <input id="search-field" class="input is-rounded" type="search" placeholder="Search">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-search"></i>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- filter options -->
-        <div id="filter-options">
           <div class="field-body">
             <!-- filter make field -->
             <div class="field is-narrow">
@@ -78,6 +95,7 @@
                 </div>
               </div>
             </div>
+
             <!-- filter color field -->
             <div class="field is-narrow">
               <div class="control">
@@ -99,13 +117,14 @@
                 </div>
               </div>
             </div>
+
             <!-- filter year field -->
             <div class="field is-narrow">
               <div class="control">
                 <div class="select is-fullwidth">
                   <select id="year-dropdown">
-                    <!-- dynamically creates placeholder year options -->
                     <option selected="selected">Year</option>
+                    <!-- dynamically creates placeholder year options -->
                     {{!--
                     {{#each Year}}
                     <option>{{make_year}}</option>
@@ -116,31 +135,88 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- filter query submit -->
-        <div class="field is-grouped is-grouped-right">
-          <div class="control">
-            <button id="filter-search-btn" class="button is-link is-rounded">
-              Filter
-            </button>
+          <!-- filter query submit -->
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <button type="submit" id="filter-search-btn" class="button is-link is-rounded">
+                Filter
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
-
     <!-- close modal button -->
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
-  <!-- Modal Code END -->
+  <!-- Filter Modal Code END -->
+
+  <!-- Add-New Modal Code START -->
+  <div id="modal-add-new" class="modal">
+    <!-- dims rest of screen when modal active -->
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+
+        <h4 class="title is-4">Add New Car</h4>
+        <!-- create new car form -->
+        <form id="add-new-options">
+          <!-- make input field -->
+          <div class="field has-addons">
+            <div class="control">
+              <a class="button is-rounded is-static is-light">
+                Make
+              </a>
+            </div>
+            <div class="control is-expanded">
+              <input id="make-addNew" type="text" class="input is-rounded" placeholder="e.g. Honda">
+            </div>
+          </div>
+          <!-- color input field -->
+          <div class="field has-addons">
+            <div class="control">
+              <a class="button is-rounded is-static is-light">
+                Color
+              </a>
+            </div>
+            <div class="control is-expanded">
+              <input id="color-addNew" type="text" class="input is-rounded" placeholder="e.g. Green">
+            </div>
+          </div>
+          <!-- year input field -->
+          <div class="field has-addons">
+            <div class="control">
+              <a class="button is-rounded is-static is-light">
+                Year
+              </a>
+            </div>
+            <div class="control is-expanded">
+              <input id="year-addNew" type="text" class="input is-rounded" placeholder="e.g. 2002">
+            </div>
+          </div>
+          <!-- form submit -->
+          <div class="field is-grouped is-grouped-right">
+            <div class="control">
+              <button id="add-new-submit" class="button is-link is-rounded">
+                Save
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <!-- Add-New Modal Code END -->
 
   <div class="spacer"></div>
 
   <!-- Search Results displayed here -->
   <div class="tile is-12 is-vertical is-ancestor">
     <!-- I don't know what the actual code supposed to be -->
-    {{!-- 
+    {{!--
     {{#each searchResult}}
-      {{> result-info searchResult}}
+    {{> result-info searchResult}}
     {{/each}}
     --}}
 
