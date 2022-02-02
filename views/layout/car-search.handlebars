@@ -1,0 +1,131 @@
+<section id="search">
+  <div class="field is-horizontal">
+    <div class="field-body">
+
+      <div class="field">
+        <div id="search-bar" class="field has-addons">
+          <div class="control is-expanded has-icons-left">
+            <input id="search-field" class="input is-rounded" type="search" placeholder="Search">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </div>
+          <div class="control">
+            <button id="search-btn" class="button is-link is-rounded">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="field is-narrow">
+        <div class="control has-icons-left is-narrow">
+          <button id="filter-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-js-example">
+            <span class="icon is-small is-left">
+              <i class="fas fa-filter"></i>
+            </span>
+            Filter
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Code Start -->
+  <div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+      <div class="box">
+
+        <div class="field is-expanded">
+          <div id="search-bar" class="field">
+            <div class="control is-expanded has-icons-left">
+              <input id="search-field" class="input is-rounded" type="search" placeholder="Search">
+              <span class="icon is-small is-left">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="filter-options">
+          <div class="field-body">
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select>
+                    <option selected="selected">Make</option>
+                    <!-- placeholder options for testing -->
+                    <option>Toyota</option>
+                    <option>Ford</option>
+                    <option>Honda</option>
+                    <option>Volkswagen</option>
+                    {{!--
+                    {{#each Make}}
+                    <option>{{make_name}}</option>
+                    {{/each}}
+                    --}}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select>
+                    <option selected="selected">Color</option>
+                    <!-- placeholder options for testing -->
+                    <option>Red</option>
+                    <option>White</option>
+                    <option>Black</option>
+                    <option>Blue</option>
+                    {{!--
+                    {{#each Color}}
+                    <option>{{color_name}}</option>
+                    {{/each}}
+                    --}}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-narrow">
+              <div class="control">
+                <div class="select is-fullwidth">
+                  <select id="year-dropdown">
+                    <option selected="selected">Year</option>
+                    <!-- dynamically creates placeholder year options -->
+
+                    {{!--
+                    {{#each Year}}
+                    <option>{{make_year}}</option>
+                    {{/each}}
+                    --}}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="field is-grouped is-grouped-right">
+          <div class="control">
+            <button id="filter-search-btn" class="button is-link is-rounded">
+              Filter
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <!-- Modal Code End -->
+
+</section>
+
