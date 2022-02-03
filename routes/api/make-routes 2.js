@@ -13,7 +13,6 @@
 //   });
 // });
 
-
 // // GET /api/make/1
 // router.get('/:id', (req, res) => {
 //     Make.findOne({
