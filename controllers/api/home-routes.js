@@ -11,5 +11,9 @@ router.get('/login', (req, res) => {
 });
 
 
+router.get('/welcome', (req, res) => {
+    res.render('car-search');
+})
+
 
 module.exports = router;
