@@ -6,8 +6,8 @@ const seedColors = require('./color-seeds');
 const seedAll = async() => {
     await sequelize.sync({ force: true });
 
-    await seedYears();
     await seedColors();
+    await seedYears();
     // await seedCarModel();
     await seedMakes();
 
