@@ -9,11 +9,14 @@ const seedYears = require('./year-seeds');
 const seedAll = async() => {
     await sequelize.sync({ force: true });
     // await seedUsers();
+
+    await seedMakes();
+
     await seedColors();
     await seedYears();
     // await seedCarModel();
-    await seedMakes();
 
+    // process.exit(0);
 
 };
 
