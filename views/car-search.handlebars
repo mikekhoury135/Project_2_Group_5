@@ -1,4 +1,10 @@
+
+
+
+
 <!-- Search -->
+{{#if loggedIn}}
+{{>post-info post}}
 <section id="search">
 
   <!-- Category Name -->
@@ -266,3 +272,6 @@
 
   </div>
 </section>
+{{else}}
+<p>Please Login</p>
+{{/if}}

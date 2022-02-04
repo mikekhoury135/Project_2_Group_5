@@ -1,7 +1,8 @@
 const sequelize = require('../config/connection');
 const seedMakes = require('./make-seeds');
-const seedYears = require('./year-seeds');
 const seedColors = require('./color-seeds');
+
+const seedYears = require('./year-seeds');
 // const seedUsers = require('./user-seeds');
 
 
