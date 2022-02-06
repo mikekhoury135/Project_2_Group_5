@@ -3,6 +3,7 @@ const Color = require('./Color');
 const Year = require('./Year');
 const MakeYear = require('./MakeYear');
 
+<<<<<<< HEAD
 
 
   // make belongToMany year
@@ -31,3 +32,6 @@ Make.belongsTo(Color,{
 
 
 module.exports = {Make, Color, Year, MakeYear};
+=======
+module.exports = {Make, Color, Year};
+>>>>>>> 777865f694713732af50b1da690821c1efe43b63
