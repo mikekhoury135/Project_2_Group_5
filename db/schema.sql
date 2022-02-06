@@ -1,5 +1,5 @@
 -- - delete database if cars inventory database exists
--- DROP DATABASE IF EXISTS cars_inventory_db;
+-- DROP DATABASE cars_inventory_db;
 
 
 -- -- Create new Database

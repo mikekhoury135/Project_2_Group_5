@@ -1,25 +1,16 @@
+// GET /api/Color/1
 const router = require('express').Router();
-const { Color } = require('../../models');
+const { Make, Color } = require('../../models');
 
 
-// GET /api/makes
-router.get('/', (req, res) => {
-    // Access our User model and run .findAll() method)
-    Color.findAll()
-        .then(dbColorData => res.json(dbColorData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
-
-// GET /api/makes/1
 router.get('/:id', (req, res) => {
     Color.findOne({
             where: {
                 id: req.params.id
-            }
+            },
+            include: [{
+                model: Make
+            }]
         })
         .then(dbColorData => {
             if (!dbColorData) {
@@ -33,24 +24,19 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-// POST /api/make-1
+// POST /api/color
 router.post('/', (req, res) => {
-    // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
-    Color.create({
-            color_name: req.body.color_name
-        })
+    // expects {color_name: 'black'}
+    Color.create(req.body)
         .then(dbColorData => res.json(dbColorData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
 });
-
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
-    // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
-
+    // expects {car_name: 'honda'}
     Color.update(req.body, {
             where: {
                 id: req.params.id
@@ -68,8 +54,6 @@ router.put('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-// DELETE /api/makes/1
 // DELETE /api/makes/1
 router.delete('/:id', (req, res) => {
     Color.destroy({
@@ -89,7 +73,4 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
-
-
-
 module.exports = router;

@@ -32,10 +32,6 @@ router.get('/login', (req, res) => {
 
 router.get('/welcome', (req, res) => {
 
-    post = {
-        make: "volkswagen",
-        color: "black"
-    }
 
     res.render('car-search', {
         post,

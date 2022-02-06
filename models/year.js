@@ -1,9 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
-
-class Year extends Model {}
-
+class Year extends Model {};
 Year.init({
     // define columns
     id: {
@@ -12,9 +9,8 @@ Year.init({
         primaryKey: true,
         autoIncrement: true
     },
-    manufacturing_year: {
+    make_year: {
         type: DataTypes.INTEGER,
-        allowNull: false
     }
 }, {
     sequelize,
@@ -23,12 +19,4 @@ Year.init({
     underscored: true,
     modelName: 'year',
 });
-
 module.exports = Year;
-
-
-
-// INSERT INTO category
-// (category_name)
-// VALUES
-// ("Plain T-Shirt", "14.99", "14", "1");

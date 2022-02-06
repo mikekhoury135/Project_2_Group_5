@@ -1,8 +1,13 @@
 const sequelize = require('../config/connection');
-const seedMakes = require('./make-seeds');
-const seedColors = require('./color-seeds');
 
+const seedColors = require('./color-seeds');
 const seedYears = require('./year-seeds');
+
+const seedMakes = require('./make-seeds');
+
+const seedMakeYear = require('./make-year-seeds');
+// const CarModel = require('../models/model');
+
 // const seedUsers = require('./user-seeds');
 
 
@@ -10,13 +15,20 @@ const seedAll = async() => {
     await sequelize.sync({ force: true });
     // await seedUsers();
 
+
+    await seedMakeYear();
     await seedMakes();
 
-    await seedColors();
     await seedYears();
+    await seedColors();
+
+    await seedCarModel();
+
+
+
     // await seedCarModel();
 
-    // process.exit(0);
+    process.exit(0);
 
 };
 
