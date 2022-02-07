@@ -3,6 +3,8 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 
 const routes = require('./controllers');
+
+const routes2 = require('./controllers/api');
 const sequelize = require('./config/connection');
 const seeds = require("./seeds")
 const app = express();
@@ -37,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+app.use(routes2);
 
 
 sequelize.sync({ force: false }).then(() => {
