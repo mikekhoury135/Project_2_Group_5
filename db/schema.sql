@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS  inventory_db;
+DROP DATABASE IF EXISTS  car_inventory_db;
 
-CREATE DATABASE  inventory_db;
+CREATE DATABASE  car_inventory_db;

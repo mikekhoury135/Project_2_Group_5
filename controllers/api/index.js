@@ -1,12 +1,14 @@
 // brings in the express router
 const router = require('express').Router();
-//brings in the make-routes
+const userRoutes = require('./user-routes');
 const makeRoutes = require('./make-routes');
-//brings in the color routes
+
 const colorRoutes = require('./color-routes');
 //brings in the year routes
 const yearRoutes = require('./year-routes');
 
+
+router.use('/user', userRoutes);
 
 router.use('/makes', makeRoutes);
 router.use('/colors', colorRoutes);

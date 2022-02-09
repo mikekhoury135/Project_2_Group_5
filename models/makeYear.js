@@ -1,9 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection');
-
 class MakeYear extends Model {}
-
 MakeYear.init(
   {
     id :
@@ -40,5 +37,4 @@ MakeYear.init(
     modelName: 'make_year',
   }
 );
-
 module.exports = MakeYear;

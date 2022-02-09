@@ -1,5 +1,4 @@
 const { Make } = require('../models');
-
 const makeData = [
   {
     make_name: 'TOYOTA',
@@ -31,50 +30,12 @@ const makeData = [
     price: 44000.00,
     stock: 21,
   },
-  {
-    make_name: 'JEEP',
-    color_id: 6,
-    price: 54000.00,
-    stock: 8,
-    
-  },
-  {
-    make_name: 'BUICK',
-    color_id: 9,
-    price: 58000.00,
-    stock: 22,
-    
-  },
-  {
-    make_name: 'LEXUS',
-    color_id: 11,
-    price: 49000.00,
-    stock: 14,
-    
-  },
-  {
-    make_name: 'GMC',
-    color_id: 7,
-    price: 48000.00,
-    stock: 7,
-    
-  },
-  {
-    make_name: 'BUICK',
-    color_id: 8,
-    price: 57000.00,
-    stock: 24,
-    
-  },
-  {
-    make_name: 'ACURA',
-    collor_id: 10,
-    price: 74000.00,
-    stock: 5,
-    
-  },
+  // {
+  //   make_name: 'ACURA',
+  //   color_id: 7,
+  //   price: 54000.00,
+  //   stock: 11,
+  // },
 ];
-
 const seedMakes = () => Make.bulkCreate(makeData);
-
 module.exports = seedMakes;

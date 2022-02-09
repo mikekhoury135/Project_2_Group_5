@@ -1,11 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
-
 // a make model
 class Make extends Model {}
-
-
 // define table columns and configuration
 Make.init(
     {
@@ -21,18 +17,9 @@ Make.init(
         type: DataTypes.STRING,
         allowNull: false
       },
-        year_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'year',
-          key: 'id',
-          unique: false
-        }
-      
-    },
       // define price column
       price: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.DECIMAL(10,2),
         allowNull: false,
         validate: {
           isDecimal: true
@@ -43,12 +30,27 @@ Make.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 10,
-       
-      }
+        validate:
+        {
+          isNumeric: true
+        }
       },
-   
+      color_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'color',
+          key: 'id',
+        }
+    },
+  //   user_id: {
+  //     type: DataTypes.INTEGER,
+  //     references: {
+  //       model: 'user',
+  //       key: 'id',
+  //     }
+  // }
+  },
     {
-     
       sequelize,
       timestamps: false,
       freezeTableName: true,
@@ -56,7 +58,4 @@ Make.init(
       modelName: 'make',
     }
   );
-  
   module.exports = Make;
-
-  // ALTER TABLE [make] NOCHECK CONSTRAINT [FK_make_id]
