@@ -2,7 +2,7 @@ const seedColors = require('./color-seeds');
 const seedMakes = require('./make-seeds');
 const seedYears = require('./year-seeds');
 const seedMakeYears = require('./make-year-seeds');
-const seedModel = require('./model-seeds');
+const seedModels = require('./model-seeds');
 
 const sequelize = require('../config/connection');
 
@@ -21,9 +21,9 @@ const seedAll = async() => {
     await seedMakeYears();
     console.log('\n----- MAKE YAERS SEEDED -----\n');
 
-    await seedModel;
+    await seedModels();
 
-    process.exit(0);
+
 };
 
 seedAll();

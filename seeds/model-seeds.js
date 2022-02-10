@@ -59,6 +59,6 @@ const modelData = [{
     },
 ];
 
-const seedMakes = () => Carmodel.bulkCreate(modelData);
+const seedModels = () => Carmodel.bulkCreate(modelData);
 
-module.exports = seedMakes;
+module.exports = seedModels;

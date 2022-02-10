@@ -12,3 +12,17 @@ async function logout() {
 }
 
 document.querySelector('#logout').addEventListener('click', logout);
+
+
+
+async function sendMake() {
+    selectedOptionId = document.getElementById('makeId');
+    if (selectedOptionId.value === "Make") {
+        alert("Please Select A Make");
+    } else {
+        var selectedMakeFrontEnd = selectedOptionId.value;
+
+        document.location.replace(`/api/search/?make=${selectedMakeFrontEnd}`)
+    }
+
+}
