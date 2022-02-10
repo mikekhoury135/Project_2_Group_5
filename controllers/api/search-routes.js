@@ -4,7 +4,7 @@ const { Make, Carmodel } = require('../../models');
 
 router2.get('/', (req, res) => {
     Make.findAll({
-        attributes: ['id', 'manufacture_name']
+        attributes: ['id', 'make_name']
     }).then((returnDatas) => {
 
         const newData = returnDatas.map(

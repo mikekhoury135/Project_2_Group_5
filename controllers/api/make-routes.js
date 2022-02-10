@@ -1,9 +1,9 @@
-const router = require('express').Router();
+const router2 = require('express').Router();
 const { Make } = require('../../models');
 
 
 // GET /api/makes
-router.get('/', (req, res) => {
+router2.get('/', (req, res) => {
     console.log("retrieveing")
         // Access our User model and run .findAll() method)
     Make.findAll()
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 
 // GET /api/makes/1
-router.get('/:id', (req, res) => {
+router2.get('/:id', (req, res) => {
     Make.findOne({
             where: {
                 id: req.params.id
@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/make-1
-router.post('/', (req, res) => {
+router2.post('/', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
     Make.create({
             manufacture_name: req.body.manufacture_name,
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/users/1
-router.put('/:id', (req, res) => {
+router2.put('/:id', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
 
     Make.update(req.body, {
@@ -75,7 +75,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE /api/makes/1
 // DELETE /api/makes/1
-router.delete('/:id', (req, res) => {
+router2.delete('/:id', (req, res) => {
     Make.destroy({
             where: {
                 id: req.params.id
@@ -94,4 +94,4 @@ router.delete('/:id', (req, res) => {
         });
 });
 
-module.exports = router;
+module.exports = router2;

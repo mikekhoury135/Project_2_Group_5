@@ -16,7 +16,7 @@ Make.init({
         autoIncrement: true
     },
     // define product_name column
-    manufacture_name: {
+    make_name: {
         type: DataTypes.STRING,
         allowNull: false
     },

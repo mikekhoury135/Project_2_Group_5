@@ -20,11 +20,36 @@
       <div class="field">
         <div id="search-bar" class="field has-addons">
           <div class="control is-expanded has-icons-left">
-            <input id="search-field" class="input is-rounded" type="search" placeholder="Search">
-            <span class="icon is-small is-left">
-              <i class="fas fa-search"></i>
-            </span>
+            <div class="select is-fullwidth">
+                  <select onchange="sendMake()" id="makeId">
+                    <option selected="selected" value="Make">Make</option>
+                    <!-- placeholder for testing START -->
+                    {{!-- <option>Toyota</option>
+                    <option>Ford</option>
+                    <option>Honda</option>
+                    <option>Volkswagen</option> --}}
+                    <!-- placeholder for testing END -->
+                    
+                    {{#each makeDropdown}}
+                    <option value="{{{this.id}}}">{{{this.manufacture_name}}}</option>
+                    {{/each}}
+                  </select>
+
+                  <select onchange="">
+                    <option selected="selected">Model</option>
+                  
+                  
+                   {{#each modelDropdown}}
+                   <option value="{{{this.id}}}">{{{this.model_name}}}</option>
+                   {{/each}}
+                  
+                   </select>
+                </div>
           </div>
+          {{#each makeDropdown}}
+          <h1>{{{this.manufacture_name}}}</h1>
+{{/each}}
+          {{manufacture_name}}
           <!-- search bar submit -->
           <div class="control">
             <button id="search-btn" class="button is-link is-rounded">
@@ -32,10 +57,10 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> 
 
       <!-- filter button activates filter modal -->
-      <div class="field is-narrow">
+      {{!-- <div class="field is-narrow">
         <div class="control has-icons-left is-narrow">
           <button id="filter-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-filter">
             <span class="icon is-small is-left">
@@ -47,7 +72,7 @@
       </div>
 
       <!-- add-new button activates add-new modal -->
-      <div class="field is-narrow">
+      {{!-- <div class="field is-narrow">
         <div class="control has-icons-left is-narrow">
           <button id="add-new-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-add-new">
             <span class="icon is-small is-left">
@@ -56,7 +81,7 @@
             Add New
           </button>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 
@@ -90,16 +115,16 @@
                   <select>
                     <option selected="selected">Make</option>
                     <!-- placeholder for testing START -->
-                    <option>Toyota</option>
+                    {{!-- <option>Toyota</option>
                     <option>Ford</option>
                     <option>Honda</option>
-                    <option>Volkswagen</option>
+                    <option>Volkswagen</option> --}}
                     <!-- placeholder for testing END -->
-                    {{!--
-                    {{#each Make}}
-                    <option>{{make_name}}</option>
+                    
+                    {{#each makeDropdown}}
+                    <option>{{manufacture_name}}</option>
                     {{/each}}
-                    --}}
+                   
                   </select>
                 </div>
               </div>
@@ -110,18 +135,18 @@
               <div class="control">
                 <div class="select is-fullwidth">
                   <select>
-                    <option selected="selected">Color</option>
+                    <option selected="selected">Make</option>
                     <!-- placeholder for testing START -->
-                    <option>Red</option>
-                    <option>White</option>
-                    <option>Black</option>
-                    <option>Blue</option>
+                    {{!-- <option>Toyota</option>
+                    <option>Ford</option>
+                    <option>Honda</option>
+                    <option>Volkswagen</option> --}}
                     <!-- placeholder for testing END -->
-                    {{!--
-                    {{#each Color}}
-                    <option>{{color_name}}</option>
+                    
+                    {{#each makeDropdown}}
+                    <option>{{manufacture_name}}</option>
                     {{/each}}
-                    --}}
+                   
                   </select>
                 </div>
               </div>
@@ -275,7 +300,6 @@
 
   </div>
   <script src="/js/logout.js"></script>
-  
 </section>
 {{else}}
 <p>Please Login</p>

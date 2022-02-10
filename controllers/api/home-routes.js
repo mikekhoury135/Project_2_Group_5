@@ -1,3 +1,5 @@
+const { Make } = require('../../models');
+
 const router = require('express').Router();
 
 // router.get('/', (req, res) => {
@@ -32,17 +34,34 @@ router.get('/login', (req, res) => {
 
 router.get('/welcome', (req, res) => {
 
-    post = {
-        make: "volkswagen",
-        color: "black"
-    }
 
-    res.render('car-search', {
-        post,
-        loggedIn: req.session.loggedIn
-    })
 
-})
+    Make.findAll({
+        attributes: ['id', 'make_name']
+    }).then((returnDatas) => {
+
+        const newData = returnDatas.map(
+            returnData => returnData.toJSON()
+        )
+
+        console.log(newData);
+        res.render('car-search', {
+
+            makeDropdown: newData,
+
+            loggedIn: req.session.loggedIn
+        })
+    });
+
+
+
+
+});
+
+
+
+
+
 
 
 

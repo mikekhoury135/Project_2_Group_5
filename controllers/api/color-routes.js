@@ -1,9 +1,9 @@
-const router = require('express').Router();
+const router2 = require('express').Router();
 const { Color } = require('../../models');
 
 
 // GET /api/makes
-router.get('/', (req, res) => {
+router2.get('/', (req, res) => {
     // Access our User model and run .findAll() method)
     Color.findAll()
         .then(dbColorData => res.json(dbColorData))
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 
 // GET /api/makes/1
-router.get('/:id', (req, res) => {
+router2.get('/:id', (req, res) => {
     Color.findOne({
             where: {
                 id: req.params.id
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/make-1
-router.post('/', (req, res) => {
+router2.post('/', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
     Color.create({
             color_name: req.body.color_name
@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/users/1
-router.put('/:id', (req, res) => {
+router2.put('/:id', (req, res) => {
     // expects {manufacture_name: 'Honda', model-id: '1', price: '37000.00', stock: '9'}
 
     Color.update(req.body, {
@@ -71,7 +71,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE /api/makes/1
 // DELETE /api/makes/1
-router.delete('/:id', (req, res) => {
+router2.delete('/:id', (req, res) => {
     Color.destroy({
             where: {
                 id: req.params.id
@@ -92,4 +92,4 @@ router.delete('/:id', (req, res) => {
 
 
 
-module.exports = router;
+module.exports = router2;
