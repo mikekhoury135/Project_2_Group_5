@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,7 @@
   <!-- BULMA Framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <!-- custom css -->
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="./public/stylesheets/style.css">
   <!-- symbols -->
   <script src="https://kit.fontawesome.com/881c4ac903.js" crossorigin="anonymous"></script>
 </head>
@@ -24,7 +23,7 @@
           <div id="navMenu" class="navbar-menu">
             <div class="navbar-start">
               <a href="/" class="navbar-item">
-                CAR INVENTORY
+                Home
               </a>
             </div>
 
@@ -94,19 +93,20 @@
       </div>
     </footer>
   </div>
- <script src="/javascript/modal-temp.js"></script>
- <script
+   <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
       crossorigin="anonymous"
     ></script>
+
   {{#if loggedIn}}
   <!-- for when button is LOGOUT -->
-  <script src="/js/logout.js"></script>
+  <script src="/javascript/logout.js"></script>
   {{/if}}
 
   <!-- temporary modal script (taken from BULMA Documentation) -->
- 
+  <script src="/javascript/modal-temp.js"></script>
+
 </body>
 
 </html>

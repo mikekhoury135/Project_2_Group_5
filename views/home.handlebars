@@ -1,33 +1,28 @@
-<!-- Database Category Selection -->
-<section id="db-selection">
-  <div class="buttons are-medium">
+{{#each makes as |make|}}
 
-    <!-- actual code -->
-    {{!--
-    {{#each Category}}
-    <div class="section">
-      <button type="button" id="{{lowercase categoryName}}-db" class="button is-rounded is-fullwidth btn-style">{{uppercase categoryName}}</button>
-    </div>
-    {{/each}}
-    --}}
+  <div class="row">
 
-    <!-- Placeholder for testing START -->
-    <div class="section">
-      <a href="/dashboard" type="button" id="cars-db" class="button is-rounded is-fullwidth btn-style">CARS</a>
+    <div class="container makeBox">
+			<div class="row  justify-content-center headerRow">
+      <div class="col-8">
+        <h2>
+          <a class="makeTitle text-uppercase" href="/make/{{make.id}}">{{make.name}}</a>
+        </h2>
+      </div>
+
+      <div class="col-4">
+        <p class="makeCreate text-right">Cars make 
+          {{make.user.username}}
+          on
+          {{format_date make.date_created}}
+        </p>
+      </div>
+			</div>
+    <div class="makeDesc">
+      <p class="text-center makeDescMain">
+        {{make.year}}
+      </p>
     </div>
-    <div class="section">
-      <button type="button" id="food-db" class="button is-rounded is-fullwidth btn-style">FOOD</button>
     </div>
-    <div class="section">
-      <button type="button" id="electronics-db" class="button is-rounded is-fullwidth btn-style">ELECTRONICS</button>
-    </div>
-    <div class="section">
-      <button type="button" id="fashion-db" class="button is-rounded is-fullwidth btn-style">FASHION &#38; JEWELRY</button>
-    </div>
-    <div class="section">
-      <button type="button" id="general-db" class="button is-rounded is-fullwidth btn-style">GENERAL</button>
-    </div>
-    <!-- Placeholder for testing END -->
 
   </div>
-</section>
