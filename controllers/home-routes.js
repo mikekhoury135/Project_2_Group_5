@@ -1,47 +1,46 @@
-
 const router = require('express').Router();
 const { User, Make, Year } = require('../models');
 //const withAuth = require('../utils/auth');
 
 
 
-router.get('/', async (req, res) => {
-    const makeData = await Make.findAll({ 
-        include: [{
-            model: User,
-            attributes: ['username'],
-        },],
-    });
-    const makes = makeData.map((make) => make.get({
-        plain: true
-    }));
+router.get('/welcome', async(req, res) => {
+    Make.findAll({
+        attributes: ['id', 'make_name']
+    }).then((returnDatas) => {
 
-    res.render('homepage',{
-        makes,
-        logged_in:req.session.logged_in
+        const newData = returnDatas.map(
+            returnData => returnData.toJSON()
+        )
 
+        console.log(newData);
+        res.render('car-search', {
+
+            makeDropdown: newData,
+
+            loggedIn: req.session.loggedIn
+        })
     });
-});
+
+
+})
+
 router.get('/', (req, res) => {
     // console.log(req.session);
-    res.render('homepage');
+    res.render('home');
     // other logic...
 });
+
 router.get('/login', (req, res) => {
+    res.render('login');
     if (req.session.loggedIn) {
         res.redirect('/welcome');
         return;
     }
-    res.render('login');
-});
-router.get('/welcome', (req, res) => {
-    post = {
-        make: "volkswagen",
-        color: "black"
-    }
-    res.render('car-search', {
-        post,
-        loggedIn: req.session.loggedIn
-    })
+
 })
+
+
+
+
 module.exports = router;
