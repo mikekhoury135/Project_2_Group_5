@@ -1,34 +1,34 @@
-const Make = require('./Make');
-const Color = require('./Color');
-const Year = require('./Year');
-const MakeYear = require('./MakeYear');
-const User = require('./User');
+const Make = require('./make');
+const Color = require('./color');
+const Year = require('./year');
+const MakeYear = require('./makeYear');
+const User = require('./user');
+const CarModel = require('./carmodel');
 
 
-  // make belongToMany year
-  Make.belongsToMany(Year,{
+// make belongToMany year
+Make.belongsToMany(Year, {
     through: MakeYear,
     foreignKey: 'make_id',
     // onDelete: 'CASCADE'
-  });
-  
-  // Tags belongToMany Products
-  Year.belongsToMany(Make,{
+});
+
+// Tags belongToMany Products
+Year.belongsToMany(Make, {
     through: MakeYear,
     foreignKey: 'year_id',
     // onDelete: 'CASCADE'
-  });
+});
 // make  belongsTo color
-Make.belongsTo(Color,{
+Make.belongsTo(Color, {
     foreignKey: 'color_id'
-  });
-  
-  // color have many make
-  Color.hasMany(Make,{
+});
+
+// color have many make
+Color.hasMany(Make, {
     foreignKey: 'color_id',
-  });
-  
+});
 
 
-module.exports = {Make, Color, Year, MakeYear, User};
 
+module.exports = { Make, Color, Year, MakeYear, User, CarModel };

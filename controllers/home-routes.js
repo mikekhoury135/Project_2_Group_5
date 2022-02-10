@@ -1,17 +1,26 @@
 const router = require('express').Router();
-const { User, Make, Year } = require('../models');
+const { User, Make, Year, Color, MakeYear } = require('../models');
 //const withAuth = require('../utils/auth');
 
 
 
 router.get('/welcome', async(req, res) => {
+    console.log("started")
     Make.findAll({
-        attributes: ['id', 'make_name']
+        include: [{
+                model: Color,
+            },
+            {
+                model: Year,
+                through: MakeYear,
+            }
+        ]
     }).then((returnDatas) => {
-
+        console.log("found")
         const newData = returnDatas.map(
-            returnData => returnData.toJSON()
-        )
+            (returnData) => {
+                returnData.toJSON()
+            })
 
         console.log(newData);
         res.render('car-search', {
