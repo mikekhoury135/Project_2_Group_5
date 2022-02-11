@@ -29,18 +29,18 @@
                     <!-- placeholder for testing END -->
                     
                     {{#each makeDropdown}}
-                    <option value="{{{this.id}}}">{{{this.make_name}}}</option>
+                    <option value="{{{this.dataValues.id}}}">{{{this.dataValues.make_name}}}</option>
                     {{/each}}
                   </select>
 
                   <select onchange="">
                     <option selected="selected">Model</option>
                   
-                  
+                  {{#if modelDropdown}}
                    {{#each modelDropdown}}
-                   <option value="{{{this.id}}}">{{{this.model_name}}}</option>
+                   <option value="{{{this.dataValues.id}}}">{{{this.dataValues.model_name}}}</option>
                    {{/each}}
-                  
+                  {{/if}}
                    </select>
                 </div>
           </div>

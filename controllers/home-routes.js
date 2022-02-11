@@ -16,16 +16,23 @@ router.get('/welcome', async(req, res) => {
             }
         ]
     }).then((returnDatas) => {
-        console.log("found")
-        const newData = returnDatas.map(
-            (returnData) => {
-                returnData.toJSON()
-            })
-
-        console.log(newData);
+        console.log("found data")
+        console.log(returnDatas)
+            // const newData = returnDatas.map(
+            //     (returnData) => {
+            //         returnData.toJSON();
+            //     })
+            // console.log("Converted to json" +
+            //     newData)
+            // const makeName = newData.make_name;
+            // console.log("" +
+            //     makeName)
+            // const stringMakeName = JSON.stringify(makeName);
+            // console.log("String" +
+            //     makeName)
         res.render('car-search', {
 
-            makeDropdown: newData,
+            makeDropdown: returnDatas,
 
             loggedIn: req.session.loggedIn
         })
