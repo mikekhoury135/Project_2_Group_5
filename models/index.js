@@ -26,7 +26,7 @@ Make.belongsTo(Color, {
 
 // color have many make
 Color.hasMany(Make, {
-    foreignKey: 'color_id',
+    foreignKey: 'id',
 });
 
 

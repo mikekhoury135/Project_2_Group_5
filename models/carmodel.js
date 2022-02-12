@@ -12,6 +12,11 @@ CarModel.init({
         primaryKey: true,
         autoIncrement: true
     },
+    model_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: false,
+    },
     model_name: {
         type: DataTypes.STRING,
         // allowNull: false
