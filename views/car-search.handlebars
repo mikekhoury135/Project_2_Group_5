@@ -19,8 +19,14 @@
         <div id="search-bar" class="field has-addons">
           <div class="control is-expanded has-icons-left">
             <div class="select is-fullwidth">
-                  <select onchange="sendMake()" id="makeId">
-                    <option selected="selected" value="Make">Make</option>
+                  <select onchange="sendMake(event)" id="makeId">
+                    <option selected="selected" value="Make">
+                      {{#if selectedMake}} 
+                          {{selectedMake}}
+                          {{else}}
+                              Make
+                      {{/if}}
+                    </option>
                     <!-- placeholder for testing START -->
                     {{!-- <option>Toyota</option>
                     <option>Ford</option>
@@ -29,19 +35,23 @@
                     <!-- placeholder for testing END -->
                     
                     {{#each makeDropdown}}
-                    <option value="{{{this.dataValues.id}}}">{{{this.dataValues.make_name}}}</option>
+                    <option value="{{this.dataValues.id}}">{{this.dataValues.make_name}}</option>
                     {{/each}}
                   </select>
 
                   <select onchange="">
                     <option selected="selected">Model</option>
-                  
-                  {{#if modelDropdown}}
+                  {{#if selectedModel}} 
+                          {{selectedModel}}
+                          {{else}}
+                              Make
+                      {{/if}}
+                  {{!-- {{#if modelDropdown}} --}}
                    {{#each modelDropdown}}
-                   <option value="{{{this.dataValues.id}}}">{{{this.dataValues.model_name}}}</option>
+                   <option value="{{this.dataValues.id}}">{{this.dataValues.model_name}}</option>
                    {{/each}}
                    
-                  {{/if}}
+                  {{!-- {{/if}} --}}
                    </select>
                 </div>
           </div>
@@ -293,6 +303,8 @@
 
   </div>
   <script src="/js/logout.js"></script>
+  
+  <script src="/js/search.js"></script>
 </section>
 {{else}}
 <p>Please Login</p>

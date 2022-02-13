@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Make, CarModel, Color, Year, MakeYear } = require('../../models');
 
-router.get('/', (req, res) => {
-    const make = parseInt(req.query.make)
+router.get('/:id', (req, res) => {
+    // const make = parseInt(req.query.make)
+    const make = +req.params.id;
 
     Promise.all([Make.findAll({
             include: [{
@@ -15,7 +16,7 @@ router.get('/', (req, res) => {
             ]
         }), CarModel.findAll({
             where: {
-                model_id: parseInt(req.query.make)
+                model_id: parseInt(make)
 
             }
         })])
@@ -27,14 +28,17 @@ router.get('/', (req, res) => {
             console.log("----------")
             console.log(data[1])
 
+            // res.status(200).send({ models: data[1] });
             res.render('car-search', {
 
 
-                makeDropdown: data[0],
-                modelDropdown: data[1],
+                    makeDropdown: data[0],
+                    modelDropdown: data[1],
+                    selectedMake: data[0][make - 1].dataValues.make_name,
 
-                loggedIn: req.session.loggedIn
-            })
+                    loggedIn: req.session.loggedIn
+                })
+                // res.status(200).json({ models: data[1] });
 
             // data[1] is from tableB
         })

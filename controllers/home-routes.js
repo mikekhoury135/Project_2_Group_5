@@ -31,7 +31,6 @@ router.get('/welcome', async(req, res) => {
             // console.log("String" +
             //     makeName)
         res.render('car-search', {
-
             makeDropdown: returnDatas,
 
             loggedIn: req.session.loggedIn
