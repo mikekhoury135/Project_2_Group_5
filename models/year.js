@@ -1,8 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
-
 class Year extends Model {}
+<<<<<<< HEAD
 
 Year.init({
     // define columns
@@ -17,11 +16,28 @@ Year.init({
         allowNull: false
     }
 }, {
+=======
+Year.init(
+  {
+    // define columns
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+      },
+      make_year: {
+      type: DataTypes.INTEGER,
+      }
+  },
+  {
+>>>>>>> feature/mix-routes-login
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: 'year',
+<<<<<<< HEAD
 });
 
 module.exports = Year;
@@ -32,3 +48,8 @@ module.exports = Year;
 // (category_name)
 // VALUES
 // ("Plain T-Shirt", "14.99", "14", "1");
+=======
+  }
+);
+module.exports = Year;
+>>>>>>> feature/mix-routes-login

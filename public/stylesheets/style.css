@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background-image: linear-gradient(180deg, #21d2fe, #6181fe, #a338fe);
+    background-attachment: fixed;
+  }
+  
+  /* Spacer <div> */
+  
+  .spacer {
+    padding: 2rem;
+  }
+  
+  /* Categories Page (home.handlebars) */
+  
+  #db-selection {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #db-selection .section {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .btn-style {
+    width: auto;
+    padding: auto;
+    font-weight: 900;
+  }
+  
+  .btn-style:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Footer (main.handlebars) */
+  
+  .footer {
+    background-color: #363636;
+    color: white;
+  }
+  
+  .footer p > strong {
+    color: white;
+  }
+  
+  .footer a > strong:hover {
+    color: #5c74e3;
+  }
+  
+  /* Login (login.handlebars) */
+  
+  .login-form, .signup-form {
+    margin-bottom: 50px;
+  }
+  
+  /* Search Page (car-search.handlebars) */
+  
+  #category-name {
+    color: white;
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  #filter-btn, #add-new-btn {
+    padding-left: 40px;
+  }
+  
+  #filter-btn > span, #add-new-btn > span {
+    margin-left: 5px;
+  }
+  
+  /* Modal (car-search.handlebars) */
+  
+  .modal-background {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  
+  #filter-search-btn, #add-new-submit {
+    margin-top: 10px;
+  }

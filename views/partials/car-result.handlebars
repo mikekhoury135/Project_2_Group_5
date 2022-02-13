@@ -1,10 +1,4 @@
 
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> feature/mix-routes-login
 <!-- Search -->
 {{#if loggedIn}}
 {{>post-info post}}
@@ -23,55 +17,11 @@
       <div class="field">
         <div id="search-bar" class="field has-addons">
           <div class="control is-expanded has-icons-left">
-<<<<<<< HEAD
             <input id="search-field" class="input is-rounded" type="search" placeholder="Search">
             <span class="icon is-small is-left">
               <i class="fas fa-search"></i>
             </span>
           </div>
-=======
-            <div class="select is-fullwidth">
-                  <select onchange="sendMake(event)" id="makeId">
-                    <option selected="selected" value="Make">
-                      {{#if selectedMake}} 
-                          {{selectedMake}}
-                          {{else}}
-                              Make
-                      {{/if}}
-                    </option>
-                    <!-- placeholder for testing START -->
-                    {{!-- <option>Toyota</option>
-                    <option>Ford</option>
-                    <option>Honda</option>
-                    <option>Volkswagen</option> --}}
-                    <!-- placeholder for testing END -->
-                    
-                    {{#each makeDropdown}}
-                    <option value="{{this.dataValues.id}}">{{this.dataValues.make_name}}</option>
-                    {{/each}}
-                  </select>
-
-                  <select onchange="">
-                    <option selected="selected">Model</option>
-                  {{#if selectedModel}} 
-                          {{selectedModel}}
-                          {{else}}
-                              Make
-                      {{/if}}
-                  {{!-- {{#if modelDropdown}} --}}
-                   {{#each modelDropdown}}
-                   <option value="{{this.dataValues.id}}">{{this.dataValues.model_name}}</option>
-                   {{/each}}
-                   
-                  {{!-- {{/if}} --}}
-                   </select>
-                </div>
-          </div>
-          {{#each makeDropdown}}
-          <h1>{{{this.manufacture_name}}}</h1>
-{{/each}}
-          {{manufacture_name}}
->>>>>>> feature/mix-routes-login
           <!-- search bar submit -->
           <div class="control">
             <button id="search-btn" class="button is-link is-rounded">
@@ -79,17 +29,10 @@
             </button>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
 
       <!-- filter button activates filter modal -->
       <div class="field is-narrow">
-=======
-      </div> 
-
-      <!-- filter button activates filter modal -->
-      {{!-- <div class="field is-narrow">
->>>>>>> feature/mix-routes-login
         <div class="control has-icons-left is-narrow">
           <button id="filter-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-filter">
             <span class="icon is-small is-left">
@@ -99,14 +42,9 @@
           </button>
         </div>
       </div>
-<<<<<<< HEAD
 
       <!-- add-new button activates add-new modal -->
       <div class="field is-narrow">
-=======
-      <!-- add-new button activates add-new modal -->
-      {{!-- <div class="field is-narrow">
->>>>>>> feature/mix-routes-login
         <div class="control has-icons-left is-narrow">
           <button id="add-new-btn" class="button is-link is-rounded js-modal-trigger" data-target="modal-add-new">
             <span class="icon is-small is-left">
@@ -115,26 +53,17 @@
             Add New
           </button>
         </div>
-<<<<<<< HEAD
       </div>
     </div>
   </div>
 
-=======
-      </div> --}}
-    </div>
-  </div>
->>>>>>> feature/mix-routes-login
   <!-- Filter Modal Code START -->
   <div id="modal-filter" class="modal">
     <!-- dims rest of screen when modal active -->
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="box">
-<<<<<<< HEAD
 
-=======
->>>>>>> feature/mix-routes-login
         <h4 class="title is-4">Filter Cars</h4>
         <!-- filter options form -->
         <form id="filter-options">
@@ -149,10 +78,7 @@
               </div>
             </div>
           </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> feature/mix-routes-login
           <div class="field-body">
             <!-- filter make field -->
             <div class="field is-narrow">
@@ -161,7 +87,6 @@
                   <select>
                     <option selected="selected">Make</option>
                     <!-- placeholder for testing START -->
-<<<<<<< HEAD
                     <option>Toyota</option>
                     <option>Ford</option>
                     <option>Honda</option>
@@ -172,32 +97,16 @@
                     <option>{{make_name}}</option>
                     {{/each}}
                     --}}
-=======
-                    {{!-- <option>Toyota</option>
-                    <option>Ford</option>
-                    <option>Honda</option>
-                    <option>Volkswagen</option> --}}
-                    <!-- placeholder for testing END -->
-                    
-                    {{#each makeDropdown}}
-                    <option>{{manufacture_name}}</option>
-                    {{/each}}
-                   
->>>>>>> feature/mix-routes-login
                   </select>
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> feature/mix-routes-login
             <!-- filter color field -->
             <div class="field is-narrow">
               <div class="control">
                 <div class="select is-fullwidth">
                   <select>
-<<<<<<< HEAD
                     <option selected="selected">Color</option>
                     <!-- placeholder for testing START -->
                     <option>Red</option>
@@ -210,28 +119,11 @@
                     <option>{{color_name}}</option>
                     {{/each}}
                     --}}
-=======
-                    <option selected="selected">Make</option>
-                    <!-- placeholder for testing START -->
-                    {{!-- <option>Toyota</option>
-                    <option>Ford</option>
-                    <option>Honda</option>
-                    <option>Volkswagen</option> --}}
-                    <!-- placeholder for testing END -->
-                    
-                    {{#each makeDropdown}}
-                    <option>{{manufacture_name}}</option>
-                    {{/each}}
-                   
->>>>>>> feature/mix-routes-login
                   </select>
                 </div>
               </div>
             </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> feature/mix-routes-login
             <!-- filter year field -->
             <div class="field is-narrow">
               <div class="control">
@@ -381,10 +273,6 @@
   </div>
   <script src="/js/logout.js"></script>
   
-<<<<<<< HEAD
-=======
-  <script src="/js/search.js"></script>
->>>>>>> feature/mix-routes-login
 </section>
 {{else}}
 <p>Please Login</p>

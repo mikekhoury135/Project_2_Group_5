@@ -5,7 +5,11 @@ const loginFormHandler = async(event) => {
     const password = document.querySelector('#password-login').value.trim();
 
     if (email && password) {
+<<<<<<< HEAD
         const response = await fetch('/user/login', {
+=======
+        const response = await fetch('/api/user/login', {
+>>>>>>> feature/mix-routes-login
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -28,11 +32,19 @@ const signupFormHandler = async(event) => {
     const password = document.querySelector('#password-signup').value.trim();
 
     if (username && email && password) {
+<<<<<<< HEAD
         const response = await fetch('/user/signup', {
             method: 'POST',
             body: JSON.stringify({ username, email, password }),
             headers: { 'Content-Type': 'application/json' },
         });
+=======
+        const response = await fetch('/api/user/signup', {
+            method: 'POST',
+            body: JSON.stringify({ username, email, password }),
+            headers: { 'Content-Type': 'application/json' },
+        })
+>>>>>>> feature/mix-routes-login
 
         if (response.ok) {
             alert("You have signed up!")
