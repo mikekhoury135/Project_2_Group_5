@@ -3,8 +3,7 @@ const { Make, CarModel, Color, Year, MakeYear } = require('../../models');
 
 router.get('/:id', (req, res) => {
     // const make = parseInt(req.query.make)
-    const make = +req.params.id;
-
+    const make2 = +req.params.id;
     Promise.all([Make.findAll({
             include: [{
                     model: Color,
