@@ -47,50 +47,27 @@ router.get('/:id', (req, res) => {
 
 router.get('/model/:model', (req, res) => {
     // const make = parseInt(req.query.make)
-    const model = +req.params.model;
-
-    Promise.all([Make.findAll({
-            include: [{
-                    model: Color,
-                },
-                {
-                    model: Year,
-                    through: MakeYear,
-                },
-                {
-                    model: CarModel
-                }
-            ]
-        }), CarModel.findAll({
-            where: {
-                model_id: parseInt(m)
-
-            }
-        })])
-        .then((data) => {
-            //data[0] is response from tableA find
+    const model = req.params.model;
 
 
-            console.log(data[0]);
-            console.log("----------")
-            console.log(data[1])
+    CarModel.findAll({
+        where: {
+            model_name: model
 
-            // res.status(200).send({ models: data[1] });
-            res.render('car-search', {
+        }
+    }).then((data) => {
+        //data[0] is response from tableA find
+        // res.status(200).send({ models: data[1] });
+        res.render('car-search', {
 
 
-                    makeDropdown: data[0],
-                    modelDropdown: data[1],
-                    selectedMake: data[0][make - 1].dataValues.make_name,
-                    searchResult: data[1],
-                    selectedModel: data[1],
-                    searchResultColor: data[0],
-                    loggedIn: req.session.loggedIn,
-                })
-                // res.status(200).json({ models: data[1] });
+                searchResults: data,
+                loggedIn: req.session.loggedIn,
+            })
+            // res.status(200).json({ models: data[1] });
 
-            // data[1] is from tableB
-        })
+        // data[1] is from tableB
+    })
 
 })
 

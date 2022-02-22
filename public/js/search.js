@@ -25,13 +25,12 @@ async function sendMake(event) {
 
 async function getAllCars(event) {
 
-    selectedOptionId = document.getElementById('modelId');
+    selectedModelOptionId = document.getElementById('modelId');
 
-    if (selectedOptionId.value === "Model") {
+    if (selectedModelOptionId.value === "Model") {
         alert("Please Select A Model");
     } else {
-        var selectedModelFrontEnd = selectedOptionId.value;
-
+        var selectedModelFrontEnd = selectedModelOptionId.value;
         document.location.replace(`/api/search/model/${selectedModelFrontEnd}`);
 
         // fetch("/api/search/" + selectedMakeFrontEnd, {
@@ -42,14 +41,6 @@ async function getAllCars(event) {
         // }).then(response => {
         //     console.log(response);
         //     response.json()
-        // }).then(data => {
-        //     console.log(data);
-        // })
+        // }).then(data
     }
-
-
-
-
-
-
 }
