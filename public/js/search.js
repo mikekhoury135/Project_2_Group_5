@@ -22,3 +22,34 @@ async function sendMake(event) {
     }
 
 }
+
+async function getAllCars(event) {
+
+    selectedOptionId = document.getElementById('modelId');
+
+    if (selectedOptionId.value === "Model") {
+        alert("Please Select A Model");
+    } else {
+        var selectedModelFrontEnd = selectedOptionId.value;
+
+        document.location.replace(`/api/search/model/${selectedModelFrontEnd}`);
+
+        // fetch("/api/search/" + selectedMakeFrontEnd, {
+        //     method: "GET",
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // }).then(response => {
+        //     console.log(response);
+        //     response.json()
+        // }).then(data => {
+        //     console.log(data);
+        // })
+    }
+
+
+
+
+
+
+}

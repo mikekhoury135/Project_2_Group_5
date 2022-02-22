@@ -17,13 +17,13 @@ Make.init({
         allowNull: false
     },
     // define price column
-    price: {
-        type: DataTypes.DECIMAL(10, 2),
-        allowNull: false,
-        validate: {
-            isDecimal: true
-        }
-    },
+    // maxprice: {
+    //     type: DataTypes.DECIMAL(10, 2),
+    //     allowNull: false,
+    //     validate: {
+    //         isDecimal: true
+    //     }
+    // },
     // define stock column
     stock: {
         type: DataTypes.INTEGER,
