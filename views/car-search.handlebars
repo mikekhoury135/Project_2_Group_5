@@ -264,15 +264,15 @@
           <img src="https://bulma.io/images/placeholders/128x128.png">
         </figure>
       </div>
-      {{#each}}
+      {{#each selectedModel}}
       <div class="tile is-child is-1"></div>
       <div class="tile is-child is-9">
-        <h2 class="title is-4">Toyota</h2>
-        <p><strong>Color:</strong>{{this.color}} Black</p>
+        <h2 class="title is-4">{{selectedModel}}</h2>
+        <p><strong>Color:</strong>{{selectedModel}}</p>
         <p><strong>Year:</strong> 2008</p>
       </div>
     </div>
-{{#each}}
+{{/each}}
     <div class="tile is-parent box">
       <div class="tile is-child">
         <figure class="image is-128x128">

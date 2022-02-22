@@ -28,6 +28,17 @@ CarModel.init({
             isDecimal: true
         }
     },
+    stock: {
+        type: DataTypes.INTEGER,
+        // allowNull: false
+    },
+    color: {
+        type: DataTypes.STRING
+    },
+    year: {
+        type: DataTypes.INTEGER
+    },
+
 }, {
     sequelize,
     timestamps: false,
