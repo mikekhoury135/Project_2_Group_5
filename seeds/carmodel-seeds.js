@@ -1,5 +1,8 @@
 const { Make, CarModel } = require('../models');
 
+
+
+
 const carmodelData = [{
         model_id: 1,
         model_name: "Supra",

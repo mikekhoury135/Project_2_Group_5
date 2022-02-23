@@ -38,6 +38,9 @@ CarModel.init({
     year: {
         type: DataTypes.INTEGER
     },
+    image: {
+        type: DataTypes.BLOB
+    }
 
 }, {
     sequelize,
