@@ -16,9 +16,23 @@ module.exports = {
         }).then(blob => {
             return FirstImage = blob;
         })
-    }
+    },
+    getImgPrius: {
+        fetch("/images/prius.png").then(response => {
+            response.blob();
+        }).then(blob => {
+            return FirstImage = blob;
+        })
+    },
     getImgM5: {
         fetch("/images/bmw 5.jpeg").then(response => {
+            response.blob();
+        }).then(blob => {
+            return FirstImage = blob;
+        })
+    },
+    getImgBeetle: {
+        fetch("/images/beetle.jpeg").then(response => {
             response.blob();
         }).then(blob => {
             return FirstImage = blob;
@@ -30,35 +44,35 @@ module.exports = {
         }).then(blob => {
             return FirstImage = blob;
         })
-    }
+    },
     getImgCivic: {
         fetch("/images/civic.png").then(response => {
             response.blob();
         }).then(blob => {
             return FirstImage = blob;
         })
-    }
+    },
     getImgCorolla: {
-        fetch("/images/cor.png").then(response => {
+        fetch("/images/corolla.png").then(response => {
             response.blob();
         }).then(blob => {
             return FirstImage = blob;
         })
-    }
+    },
     getImgF150: {
         fetch("/images/f150.png").then(response => {
             response.blob();
         }).then(blob => {
             return FirstImage = blob;
         })
-    }
+    },
     getImgSupra: {
-        fetch("/images/sup.png").then(response => {
+        fetch("/images/supra.png").then(response => {
             response.blob();
         }).then(blob => {
             return FirstImage = blob;
         })
-    }
+    },
     getImgWindstar: {
         fetch("/images/Windstar.png").then(response => {
             response.blob();

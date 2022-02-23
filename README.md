@@ -2,8 +2,8 @@
 
 Things to Do
 
-Convert Images to blob in utils/helpers file
+Convert Images to blob in utils/helpers file✔️
 
-assign the converted images to the blob model
+assign the converted images to the blob model✔️
 
 read from blob -> to buffer -> build the http response
