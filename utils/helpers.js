@@ -82,3 +82,10 @@ module.exports = {
     }
 
 }
+
+
+Handlebars.registerHelper('blobToUrl', function(blob) {
+    var urlCreator = window.URL || window.webkitULR;
+    var imageUrl = urlCreator.createObjectURL(blob);
+    return imageUrl;
+});
