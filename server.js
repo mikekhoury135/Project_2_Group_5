@@ -40,6 +40,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // turn on routes
 app.use(routes);
 
+Handlebars.registerHelper('blobToUrl', function(blob) {
+    var urlCreator = window.URL || window.webkitULR;
+    var imageUrl = urlCreator.createObjectURL(blob);
+    return imageUrl;
+});
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {

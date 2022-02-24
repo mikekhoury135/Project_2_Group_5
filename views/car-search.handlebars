@@ -267,6 +267,7 @@
       {{#each searchResults}}
       <div class="tile is-child is-1"></div>
       <div class="tile is-child is-9">
+        <img src="{{blobToUrl this.dataValues.image}}"></img>
         <h2 class="title is-4">Toyota-{{this.dataValues.model_name}}</h2>
         <p><strong>Color:</strong>{{this.dataValues.color}}</p>
         <p><strong>Year:</strong>{{this.dataValues.year}}</p>

@@ -21,7 +21,7 @@ module.exports = {
         fetch("/images/prius.png").then(response => {
             response.blob();
         }).then(blob => {
-            return FirstImage = blob;
+            return SecondImage = blob;
         })
     },
     getImgM5: {
@@ -81,13 +81,7 @@ module.exports = {
         })
     },
 
-    blobobjfuncs: {
-        blobToUrlFunction(blob) {
-            Handlebars.registerHelper('blobToUrl', function(blob) {
-                var urlCreator = window.URL || window.webkitULR;
-                var imageUrl = urlCreator.createObjectURL(blob);
-                return imageUrl;
-            });
-        }
-    }
+
+
+
 }
