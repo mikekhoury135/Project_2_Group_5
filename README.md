@@ -6,4 +6,6 @@ Convert Images to blob in utils/helpers file✔️
 
 assign the converted images to the blob model✔️
 
-read from blob -> to buffer -> build the http response
+<!-- read from blob -> to buffer -> build the http response -->
+
+The seeds for images paths should be correct

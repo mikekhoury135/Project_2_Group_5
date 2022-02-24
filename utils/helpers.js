@@ -11,14 +11,14 @@ module.exports = {
 
 
     getImgAccord: {
-        fetch("/images/accord.png").then(response => {
+        fetch("").then(response => {
             response.blob();
         }).then(blob => {
             return FirstImage = blob;
         })
     },
     getImgPrius: {
-        fetch("/images/prius.png").then(response => {
+        fetch("images/prius.png").then(response => {
             response.blob();
         }).then(blob => {
             return SecondImage = blob;
