@@ -79,13 +79,15 @@ module.exports = {
         }).then(blob => {
             return FirstImage = blob;
         })
+    },
+
+    blobobjfuncs: {
+        blobToUrlFunction(blob) {
+            Handlebars.registerHelper('blobToUrl', function(blob) {
+                var urlCreator = window.URL || window.webkitULR;
+                var imageUrl = urlCreator.createObjectURL(blob);
+                return imageUrl;
+            });
+        }
     }
-
 }
-
-
-Handlebars.registerHelper('blobToUrl', function(blob) {
-    var urlCreator = window.URL || window.webkitULR;
-    var imageUrl = urlCreator.createObjectURL(blob);
-    return imageUrl;
-});
