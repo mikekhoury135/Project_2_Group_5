@@ -1,5 +1,5 @@
 const { Make, CarModel } = require('../models');
-const { getImgAccord, getImgM5, getImgM3, getImgCivic, getImgCorolla, getImgF150, getImgSupra, getImgWindstar } = require('../utils/helpers');
+const { getImgAccord, getImgM5, getImgM3, getImgCivic, getImgCorolla, getImgF150, getImgSupra, getImgWindstar, getImgPrius } = require('../utils/helpers');
 
 
 
@@ -10,7 +10,7 @@ const carmodelData = [{
         stock: 2,
         color: "red",
         year: 1999,
-        image: getImgSupra
+        image: "https://i.ibb.co/S7BZwhG/sup.png"
     }, {
         model_id: 1,
         model_name: "Prius",
@@ -18,7 +18,7 @@ const carmodelData = [{
         stock: 20,
         color: "blue",
         year: 2018,
-        image: getImgPrius
+        image: "https://i.ibb.co/kQLkdx8/prius.png"
     },
     {
         model_id: 1,
@@ -27,7 +27,7 @@ const carmodelData = [{
         stock: 18,
         color: "red",
         year: 2010,
-        image: getImgCorolla
+        image: "https://i.ibb.co/5sYnqvZ/cor.png"
     }, {
         model_id: 2,
         model_name: "F150",
@@ -35,7 +35,7 @@ const carmodelData = [{
         stock: 9,
         color: "black",
         year: 2012,
-        image: getImgF150
+        image: 'https://i.ibb.co/h8DCXWR/f150.jpg'
     }, {
         model_id: 2,
         model_name: "Windstar",
@@ -43,7 +43,7 @@ const carmodelData = [{
         stock: 1,
         color: "light blue",
         year: 1998,
-        image: getImgWindstar
+        image: "img/Windstar.png"
     }, {
         model_id: 3,
         model_name: "Accord",
@@ -51,7 +51,7 @@ const carmodelData = [{
         stock: 11,
         color: "white",
         year: 2008,
-        image: getImgAccord
+        image: "img/accord.png"
     }, {
         model_id: 3,
         model_name: "Civic",
@@ -59,7 +59,7 @@ const carmodelData = [{
         stock: 29,
         color: "Dark Blue",
         year: 2022,
-        image: getImgCivic
+        image: "img/civic.png"
     }, {
         model_id: 4,
         model_name: "Beetle",
@@ -67,7 +67,7 @@ const carmodelData = [{
         stock: 1,
         color: "yellow",
         year: 1989,
-        image: getImgBeetle
+        image: "img/beetle.png"
     }, {
         model_id: 5,
         model_name: "M5",
@@ -75,7 +75,7 @@ const carmodelData = [{
         stock: 5,
         color: "white",
         year: 2022,
-        image: getImgM5
+        image: "img/bmw 5.jpg"
     }, {
         model_id: 5,
         model_name: "M3",
@@ -83,7 +83,7 @@ const carmodelData = [{
         stock: 9,
         color: "white",
         year: 2020,
-        image: getImgM3
+        image: "img/bm3.png"
     }
 ];
 

@@ -1,3 +1,86 @@
+// import fetch from 'cross-fetch';
+
+
+// function getImgPrius() {
+//     fetch("https://i.ibb.co/kQLkdx8/prius.png").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return SecondImage = blob;
+//     })
+// }
+
+// function getImgM5() {
+//     fetch("https://i.ibb.co/1Kk9sNK/bmw-5.jpg").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgBeetle() {
+//     fetch('https://i.ibb.co/4dY2Vf9/beetle.jpg').then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgM3() {
+//     fetch("https://i.ibb.co/qRrY7r3/bmw3.png").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgCivic() {
+//     fetch("https://i.ibb.co/5sYnqvZ/cor.png").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgAccord() {
+//     fetch('https://i.ibb.co/hfDGpgk/phv.png').then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgCorolla() {
+//     fetch("https://i.ibb.co/5sYnqvZ/cor.png").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgWindstar() {
+//     fetch("https://i.ibb.co/sbVHcjX/Windstar.png").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgSupra() {
+//     fetch("https://i.ibb.co/S7BZwhG/sup.png").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
+// function getImgF150() {
+//     fetch("https://i.ibb.co/C6Wk63p/f150.webp").then(response => {
+//         response.blob();
+//     }).then(blob => {
+//         return FirstImage = blob;
+//     })
+// }
+
 module.exports = {
     format_time: (date) => {
         return date.toLocaleTimeString();
@@ -6,82 +89,19 @@ module.exports = {
         return `${new Date(date).getMonth() + 1}/${new Date(date).getDate()}/${
         new Date(date).getFullYear() + 5
       }`;
-    },
-
-
-
-    getImgAccord: {
-        fetch("").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgPrius: {
-        fetch("images/prius.png").then(response => {
-            response.blob();
-        }).then(blob => {
-            return SecondImage = blob;
-        })
-    },
-    getImgM5: {
-        fetch("/images/bmw 5.jpeg").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgBeetle: {
-        fetch("/images/beetle.jpeg").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
     }
-    getImgM3: {
-        fetch("/images/bmw3.jpeg").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgCivic: {
-        fetch("/images/civic.png").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgCorolla: {
-        fetch("/images/corolla.png").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgF150: {
-        fetch("/images/f150.png").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgSupra: {
-        fetch("/images/supra.png").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
-    getImgWindstar: {
-        fetch("/images/Windstar.png").then(response => {
-            response.blob();
-        }).then(blob => {
-            return FirstImage = blob;
-        })
-    },
 
-
+    ,
+    // getImgWindstar,
+    // getImgAccord,
+    // getImgBeetle,
+    // getImgCivic,
+    // getImgCorolla,
+    // getImgF150,
+    // getImgM3,
+    // getImgM5,
+    // getImgPrius,
+    // getImgSupra,
 
 
 }

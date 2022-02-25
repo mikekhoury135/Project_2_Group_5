@@ -1,11 +1,13 @@
-# Project_2_Group_5
+# Car Inventory DB
 
-Things to Do
+## User Story
 
-Convert Images to blob in utils/helpers file✔️
+* As a user I want to login or register to access a database of cars that are available for sale.
 
-assign the converted images to the blob model✔️
 
-<!-- read from blob -> to buffer -> build the http response -->
+## Made by:
+Salman Ghouse: github.com/salmanghouse1
 
-The seeds for images paths should be correct
+
+## Usage
+* npm run seed, then npm start

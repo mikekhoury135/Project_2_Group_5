@@ -173,19 +173,6 @@
             </div>
           </div>
           <!-- filter query submit -->
-          <div class="field is-grouped is-grouped-right">
-            <div class="control">
-              <button type="submit" id="filter-search-btn" class="button is-link is-rounded">
-                Filter
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- close modal button -->
-    <button class="modal-close is-large" aria-label="close"></button>
-  </div>
   <!-- Filter Modal Code END -->
 
   <!-- Add-New Modal Code START -->
@@ -267,20 +254,14 @@
       {{#each searchResults}}
       <div class="tile is-child is-1"></div>
       <div class="tile is-child is-9">
-        <img src="{{blobToUrl this.dataValues.image}}"></img>
+        <img src="{{this.dataValues.image}}"></img>
         <h2 class="title is-4">Toyota-{{this.dataValues.model_name}}</h2>
         <p><strong>Color:</strong>{{this.dataValues.color}}</p>
         <p><strong>Year:</strong>{{this.dataValues.year}}</p>
-        <p><strong>Price:</strong>{{this.dataValues.price}}<br><strong>{{this.dataValues.stock}}</strong></p>
+        <p><strong>Price:</strong>{{this.dataValues.price}}<br><strong>Stock:{{this.dataValues.stock}}</strong></p>
       </div>
     </div>
 {{/each}}
-    <div class="tile is-parent box">
-      <div class="tile is-child">
-        <figure class="image is-128x128">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </figure>
-      </div>
       {{!-- <div class="tile is-child is-1"></div>
       <div class="tile is-child is-9">
         <h2 class="title is-4">Honda</h2>

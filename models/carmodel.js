@@ -39,7 +39,7 @@ CarModel.init({
         type: DataTypes.INTEGER
     },
     image: {
-        type: DataTypes.BLOB
+        type: DataTypes.STRING
     }
 
 }, {
