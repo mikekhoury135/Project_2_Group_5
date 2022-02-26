@@ -7,6 +7,7 @@
 
 ## Made by:
 Salman Ghouse: github.com/salmanghouse1
+and other group members.
 
 
 ## Usage
