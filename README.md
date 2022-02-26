@@ -12,3 +12,8 @@ and other group members.
 
 ## Usage
 * npm run seed, then npm start
+
+
+
+Change path of images
+Get data to forms
