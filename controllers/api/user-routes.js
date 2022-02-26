@@ -19,15 +19,14 @@ router.post('/signup', async(req, res) => {
 
         console.log("added");
         res.status(200);
-        // 22
-        req.session.save(() => {
-                req.session.loggedIn = true;
+        // req.session.save(() => {
+        //     req.session.loggedIn = true;
 
-                res.status(200)
-                res.json({ user: dbUserData, message: 'You are now logged in!' });
+        //     res.status(200)
+        //     res.json({ user: dbUserData, message: 'You are now logged in!' });
 
-            })
-            // 29
+        // })
+
     }).catch((err) => {
         console.log(err);
         res.status(500).json(err);
