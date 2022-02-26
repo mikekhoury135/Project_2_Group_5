@@ -1,11 +1,11 @@
 async function sendMake(event) {
-    // event.preventDefault();
+    event.preventDefault();
     selectedOptionId = document.getElementById('makeId');
     if (selectedOptionId.value === "Make") {
         alert("Please Select A Make");
     } else {
         var selectedMakeFrontEnd = selectedOptionId.value;
-
+        // window.history.pushState('', 'New Page Title', `/api/search//${selectedMakeFrontEnd}`);
         document.location.replace(`/api/search/${selectedMakeFrontEnd}`);
 
         // fetch("/api/search/" + selectedMakeFrontEnd, {
@@ -24,6 +24,7 @@ async function sendMake(event) {
 }
 
 async function getAllCars(event) {
+    event.preventDefault();
 
     selectedModelOptionId = document.getElementById('modelId');
 

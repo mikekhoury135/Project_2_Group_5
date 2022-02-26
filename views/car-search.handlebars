@@ -44,7 +44,7 @@
                   {{#if selectedModel}} 
                           {{selectedModel}}
                           {{else}}
-                              Make
+                              Model
                       {{/if}}
                   {{!-- {{#if modelDropdown}} --}}
                    {{#each modelDropdown}}
@@ -68,6 +68,29 @@
         </div>
       </div> 
 
+        {{#each searchResults}}
+    
+    
+    <div>
+      <div>
+        <figure class="image is-128x128">
+          <img src="{{this.dataValues.image}}">
+        </figure>
+      </div>
+      
+        
+      <div>
+       
+        <h2>{{this.dataValues.model_name}}</h2>
+        <p><strong>Color:</strong>{{this.dataValues.color}}</p>
+        <p><strong>Year:</strong>{{this.dataValues.year}}</p>
+        <p><strong>Price:</strong>{{this.dataValues.price}}<br><strong>Stock:{{this.dataValues.stock}}</strong></p>
+      </div>
+    
+    </div>
+{{/each}}
+    
+{{!-- 
       <!-- filter button activates filter modal -->
       {{!-- <div class="field is-narrow">
         <div class="control has-icons-left is-narrow">
@@ -167,11 +190,11 @@
                     <option>{{id.make_year}}</option>
                     {{/each}}
                     --}}
-                  </select>
-                </div>
+                  {{!-- </select> --}}
+                {{!-- </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- filter query submit -->
   <!-- Filter Modal Code END -->
 
@@ -233,10 +256,10 @@
   </div>
   <!-- Add-New Modal Code END --> --}}
 
-  <div class="spacer"></div>
+  {{!-- <div class="spacer"></div> --}}
 
   <!-- Search Results displayed here -->
-  <div class="tile is-12 is-vertical is-ancestor">
+  {{!-- <div class="tile is-12 is-vertical is-ancestor"> --}}
     <!-- I don't know what the actual code supposed to be -->
     {{!--
     {{#each searchResult}}
@@ -245,23 +268,6 @@
     --}}
 
     <!-- placeholder for testing START -->
-    <div class="tile is-parent box">
-      {{!-- <div class="tile is-child">
-        <figure class="image is-128x128">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </figure>
-      </div> --}}
-      {{#each searchResults}}
-      <div class="tile is-child is-1"></div>
-      <div class="tile is-child is-9">
-        <img src="{{this.dataValues.image}}"></img>
-        <h2 class="title is-4">Toyota-{{this.dataValues.model_name}}</h2>
-        <p><strong>Color:</strong>{{this.dataValues.color}}</p>
-        <p><strong>Year:</strong>{{this.dataValues.year}}</p>
-        <p><strong>Price:</strong>{{this.dataValues.price}}<br><strong>Stock:{{this.dataValues.stock}}</strong></p>
-      </div>
-    </div>
-{{/each}}
       {{!-- <div class="tile is-child is-1"></div>
       <div class="tile is-child is-9">
         <h2 class="title is-4">Honda</h2>
@@ -285,7 +291,11 @@
     </div> --}}
     <!-- placeholder for testing END -->
 
-  </div>
+  {{!-- </div> --}}
+  {{!-- </div> --}}
+  {{!-- </div> --}}
+  {{!-- </section> --}} --}}
+  
   <script src="/js/logout.js"></script>
   
   <script src="/js/search.js"></script>

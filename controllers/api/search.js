@@ -3,7 +3,7 @@ const { Make, CarModel, Color, Year, MakeYear } = require('../../models');
 
 router.get('/:id', (req, res) => {
     // const make = parseInt(req.query.make)
-    const make = +req.params.id;
+    const make = req.params.id;
 
     Promise.all([Make.findAll({
             include: [{
@@ -47,17 +47,19 @@ router.get('/:id', (req, res) => {
 
 router.get('/model/:model', (req, res) => {
     // const make = parseInt(req.query.make)
-    const model = req.params.model;
+    const model2 = req.params.model;
 
 
     CarModel.findAll({
         where: {
-            model_name: model
+            model_name: model2.toString()
 
         }
     }).then((data) => {
         //data[0] is response from tableA find
         // res.status(200).send({ models: data[1] });
+
+        console.log(data);
         res.render('car-search', {
 
 
