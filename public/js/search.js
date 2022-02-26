@@ -25,6 +25,8 @@ async function sendMake(event) {
 
 async function getAllCars(event) {
     event.preventDefault();
+    selectedOptionId = document.getElementById('makeId');
+    var selectedMakeFrontEnd = selectedOptionId.value;
 
     selectedModelOptionId = document.getElementById('modelId');
 
@@ -32,7 +34,7 @@ async function getAllCars(event) {
         alert("Please Select A Model");
     } else {
         var selectedModelFrontEnd = selectedModelOptionId.value;
-        document.location.replace(`/api/search/model/${selectedModelFrontEnd}`);
+        document.location.replace(`/api/search/model/${selectedMakeFrontEnd}/${selectedModelFrontEnd}`);
 
         // fetch("/api/search/" + selectedMakeFrontEnd, {
         //     method: "GET",

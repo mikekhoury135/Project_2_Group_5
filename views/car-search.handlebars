@@ -20,9 +20,9 @@
           <div class="control is-expanded has-icons-left">
             <div class="select is-fullwidth">
                   <select onchange="sendMake(event)" id="makeId">
-                    <option selected="selected" value="Make">
+                    <option selected="selected" value={{selectedMake.dataValues.id}}>
                       {{#if selectedMake}} 
-                          {{selectedMake}}
+                          {{selectedMake.dataValues.make_name}}
                           {{else}}
                               Make
                       {{/if}}
@@ -295,7 +295,7 @@
   {{!-- </div> --}}
   {{!-- </div> --}}
   {{!-- </section> --}} --}}
-  
+  z
   <script src="/js/logout.js"></script>
   
   <script src="/js/search.js"></script>
