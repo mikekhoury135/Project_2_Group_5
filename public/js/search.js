@@ -6,7 +6,7 @@ async function sendMake(event) {
     } else {
         var selectedMakeFrontEnd = selectedOptionId.value;
         // window.history.pushState('', 'New Page Title', `/api/search//${selectedMakeFrontEnd}`);
-        document.location.replace(`/api/search/${selectedMakeFrontEnd}`);
+        document.location.replace(`/welcome/api/search/${selectedMakeFrontEnd}`);
 
         // fetch("/api/search/" + selectedMakeFrontEnd, {
         //     method: "GET",
@@ -34,7 +34,7 @@ async function getAllCars(event) {
         alert("Please Select A Model");
     } else {
         var selectedModelFrontEnd = selectedModelOptionId.value;
-        document.location.replace(`/api/search/model/${selectedMakeFrontEnd}/${selectedModelFrontEnd}`);
+        document.location.replace(`/welcome/api/search/model/${selectedMakeFrontEnd}/${selectedModelFrontEnd}`);
 
         // fetch("/api/search/" + selectedMakeFrontEnd, {
         //     method: "GET",
