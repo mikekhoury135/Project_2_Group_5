@@ -156,7 +156,7 @@ router.get('/welcome/api/search/model/:make/:model', (req, res) => {
                 modelDropdown: data[1],
                 loggedIn: req.session.loggedIn,
                 searchResults: data[2],
-                loggedIn: req.session.loggedIn
+
             })
             // res.status(200).json({ models: data[1] });
 
