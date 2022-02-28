@@ -9,6 +9,7 @@ const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
 
 
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -29,6 +30,8 @@ const sess = {
 };
 app.use(session(sess));
 
+
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
@@ -38,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // turn on routes
 app.use(routes);
+
 
 
 // turn on connection to db and server

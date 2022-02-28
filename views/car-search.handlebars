@@ -20,9 +20,9 @@
           <div class="control is-expanded has-icons-left">
             <div class="select is-fullwidth">
                   <select onchange="sendMake(event)" id="makeId">
-                    <option selected="selected" value="Make">
+                    <option selected="selected" value={{selectedMake.dataValues.id}}>
                       {{#if selectedMake}} 
-                          {{selectedMake}}
+                          {{selectedMake.dataValues.make_name}}
                           {{else}}
                               Make
                       {{/if}}
@@ -39,16 +39,16 @@
                     {{/each}}
                   </select>
 
-                  <select onchange="">
+                  <select onchange="getAllCars(event)" id="modelId">
                     <option selected="selected">Model</option>
                   {{#if selectedModel}} 
                           {{selectedModel}}
                           {{else}}
-                              Make
+                              Model
                       {{/if}}
                   {{!-- {{#if modelDropdown}} --}}
                    {{#each modelDropdown}}
-                   <option value="{{this.dataValues.id}}">{{this.dataValues.model_name}}</option>
+                   <option value="{{this.dataValues.model_name}}">{{this.dataValues.model_name}}</option>
                    {{/each}}
                    
                   {{!-- {{/if}} --}}
@@ -67,7 +67,38 @@
           </div>
         </div>
       </div> 
+</div>
+</div>
+<br>
+        {{#each searchResults}}
+    
+    <div class="tile is-parent box">
+      <div class="tile is-child">
+        <figure class="image is-128x128">
+          <img src="{{this.dataValues.image}}">
+        </figure>
+      </div>
+      <div class="tile is-child is-1"></div>
+      <div class="tile is-child is-10">
+        <h2 class="title is-4">{{this.dataValues.model_name}}</h2>
+        
+        <p><strong>Color:</strong>{{this.dataValues.color}}</p>
+        <p><strong>Year:</strong>{{this.dataValues.year}}</p>
+        <p><strong>Price:</strong>{{this.dataValues.price}}<br><strong>Stock:{{this.dataValues.stock}}</strong></p>
+      
+      </div>
+    </div>
+    {{!--  --}}
+    
+      <div class="tile is-child is-1"></div>
+    {{/each}}
+    <br>
+</div>
+</section>
 
+
+    
+{{!-- 
       <!-- filter button activates filter modal -->
       {{!-- <div class="field is-narrow">
         <div class="control has-icons-left is-narrow">
@@ -167,29 +198,16 @@
                     <option>{{id.make_year}}</option>
                     {{/each}}
                     --}}
-                  </select>
-                </div>
+                  {{!-- </select> --}}
+                {{!-- </div>
               </div>
             </div>
-          </div>
+          </div> --}}
           <!-- filter query submit -->
-          <div class="field is-grouped is-grouped-right">
-            <div class="control">
-              <button type="submit" id="filter-search-btn" class="button is-link is-rounded">
-                Filter
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <!-- close modal button -->
-    <button class="modal-close is-large" aria-label="close"></button>
-  </div>
   <!-- Filter Modal Code END -->
 
   <!-- Add-New Modal Code START -->
-  <div id="modal-add-new" class="modal">
+  {{!-- <div id="modal-add-new" class="modal">
     <!-- dims rest of screen when modal active -->
     <div class="modal-background"></div>
     <div class="modal-content">
@@ -244,12 +262,12 @@
     </div>
     <button class="modal-close is-large" aria-label="close"></button>
   </div>
-  <!-- Add-New Modal Code END -->
+  <!-- Add-New Modal Code END --> --}}
 
-  <div class="spacer"></div>
+  {{!-- <div class="spacer"></div> --}}
 
   <!-- Search Results displayed here -->
-  <div class="tile is-12 is-vertical is-ancestor">
+  {{!-- <div class="tile is-12 is-vertical is-ancestor"> --}}
     <!-- I don't know what the actual code supposed to be -->
     {{!--
     {{#each searchResult}}
@@ -258,34 +276,14 @@
     --}}
 
     <!-- placeholder for testing START -->
-    <div class="tile is-parent box">
-      <div class="tile is-child">
-        <figure class="image is-128x128">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </figure>
-      </div>
-      <div class="tile is-child is-1"></div>
-      <div class="tile is-child is-9">
-        <h2 class="title is-4">Toyota</h2>
-        <p><strong>Color:</strong> Black</p>
-        <p><strong>Year:</strong> 2008</p>
-      </div>
-    </div>
-
-    <div class="tile is-parent box">
-      <div class="tile is-child">
-        <figure class="image is-128x128">
-          <img src="https://bulma.io/images/placeholders/128x128.png">
-        </figure>
-      </div>
-      <div class="tile is-child is-1"></div>
+      {{!-- <div class="tile is-child is-1"></div>
       <div class="tile is-child is-9">
         <h2 class="title is-4">Honda</h2>
         <p>Color: Red</p>
         <p>Year: 2002</p>
       </div>
-    </div>
-
+    </div> --}}
+{{!-- 
     <div class="tile is-parent box">
       <div class="tile is-child">
         <figure class="image is-128x128">
@@ -298,10 +296,14 @@
         <p>Color: Green</p>
         <p>Year: 2021</p>
       </div>
-    </div>
+    </div> --}}
     <!-- placeholder for testing END -->
 
-  </div>
+  {{!-- </div> --}}
+  {{!-- </div> --}}
+  {{!-- </div> --}}
+  {{!-- </section> --}}
+
   <script src="/js/logout.js"></script>
   
   <script src="/js/search.js"></script>

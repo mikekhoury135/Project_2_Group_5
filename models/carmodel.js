@@ -20,7 +20,28 @@ CarModel.init({
     model_name: {
         type: DataTypes.STRING,
         // allowNull: false
+    },
+    price: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false,
+        validate: {
+            isDecimal: true
+        }
+    },
+    stock: {
+        type: DataTypes.INTEGER,
+        // allowNull: false
+    },
+    color: {
+        type: DataTypes.STRING
+    },
+    year: {
+        type: DataTypes.INTEGER
+    },
+    image: {
+        type: DataTypes.STRING
     }
+
 }, {
     sequelize,
     timestamps: false,

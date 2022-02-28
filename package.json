@@ -3,8 +3,14 @@
     "version": "1.0.0",
     "description": "",
     "main": "server.js",
+
+
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+
+        "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
+        "heroku-postbuild": "npm run seed",
+        "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies.",
+
         "start": "node server.js",
         "seed": "node seeds/index.js"
     },
@@ -22,12 +28,14 @@
     "dependencies": {
         "bcrypt": "^5.0.1",
         "connect-session-sequelize": "^7.1.2",
+        "cross-fetch": "^3.1.5",
         "dotenv": "^14.3.1",
         "express": "^4.17.2",
         "express-handlebars": "^6.0.2",
         "express-session": "^1.17.2",
         "handlebars": "^4.7.7",
         "mysql2": "^2.3.3",
+        "node-fetch": "^3.2.0",
         "path": "^0.12.7",
         "router": "^1.3.6",
         "seed": "^0.4.4",

@@ -12,18 +12,3 @@ async function logout() {
 }
 
 document.querySelector('#logout').addEventListener('click', logout);
-
-
-
-
-async function retrieveData() {
-    selectedOptionId = document.getElementById('modelId');
-    if (selectedOptionId.value === "Model") {
-        alert("Please Select A Model");
-    } else {
-        var selectedMakeFrontEnd = selectedOptionId.value;
-
-        document.location.replace(`/api/search/?make=${selectedMakeFrontEnd}+?model={}`)
-    }
-
-}
