@@ -68,27 +68,31 @@
         </div>
       </div> 
 </div>
+</div>
+<br>
         {{#each searchResults}}
     
-    
-    <div>
-      <div>
+    <div class="tile is-parent box">
+      <div class="tile is-child">
         <figure class="image is-128x128">
           <img src="{{this.dataValues.image}}">
         </figure>
       </div>
-      
+      <div class="tile is-child is-1"></div>
+      <div class="tile is-child is-10">
+        <h2 class="title is-4">{{this.dataValues.model_name}}</h2>
         
-      <div>
-       
-        <h2>{{this.dataValues.model_name}}</h2>
         <p><strong>Color:</strong>{{this.dataValues.color}}</p>
         <p><strong>Year:</strong>{{this.dataValues.year}}</p>
         <p><strong>Price:</strong>{{this.dataValues.price}}<br><strong>Stock:{{this.dataValues.stock}}</strong></p>
+      
       </div>
-    
     </div>
+    {{!--  --}}
+    
+      <div class="tile is-child is-1"></div>
     {{/each}}
+    <br>
 </div>
 </section>
 
