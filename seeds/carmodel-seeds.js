@@ -43,7 +43,7 @@ const carmodelData = [{
         stock: 1,
         color: "light blue",
         year: 1998,
-        image: "img/Windstar.png"
+        image: "https://i.ibb.co/sQBfzzS/Windstar.webp"
     }, {
         model_id: 3,
         model_name: "Accord",
@@ -51,7 +51,7 @@ const carmodelData = [{
         stock: 11,
         color: "white",
         year: 2008,
-        image: "img/accord.png"
+        image: "https://i.ibb.co/PG70p4j/accord.webp"
     }, {
         model_id: 3,
         model_name: "Civic",
@@ -59,7 +59,7 @@ const carmodelData = [{
         stock: 29,
         color: "Dark Blue",
         year: 2022,
-        image: "img/civic.png"
+        image: "https://i.ibb.co/FxyjRyF/civic.webp"
     }, {
         model_id: 4,
         model_name: "Beetle",
@@ -67,7 +67,7 @@ const carmodelData = [{
         stock: 1,
         color: "yellow",
         year: 1989,
-        image: "img/beetle.png"
+        image: "https://i.ibb.co/4dY2Vf9/beetle.jpg"
     }, {
         model_id: 5,
         model_name: "M5",
@@ -75,7 +75,7 @@ const carmodelData = [{
         stock: 5,
         color: "white",
         year: 2022,
-        image: "img/bmw 5.jpg"
+        image: "https://i.ibb.co/1Kk9sNK/bmw-5.jpg"
     }, {
         model_id: 5,
         model_name: "M3",
@@ -83,7 +83,7 @@ const carmodelData = [{
         stock: 9,
         color: "white",
         year: 2020,
-        image: "img/bm3.png"
+        image: "https://i.ibb.co/qRrY7r3/bmw3.png"
     }
 ];
 
