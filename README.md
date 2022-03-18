@@ -30,7 +30,7 @@
 - If on Heroku, all you have to do is login.
 
 ## Contributors of this Project
-- alman Ghouse: github.com/salmanghouse1
+- Salman Ghouse: github.com/salmanghouse1
 - Mekonnen Mohammed 
 - Mike Khory
 and other group members.
